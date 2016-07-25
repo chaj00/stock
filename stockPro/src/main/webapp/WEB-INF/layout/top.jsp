@@ -17,7 +17,7 @@
 		
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/stock/index.do">HOME</a></li>
-					<li class="divider-vertical"></li>
+					<li class="divider-vertical">aaa</li>
 					<li><a href="#">Fundamental</a></li>
 				 	<li class="divider-vertical"></li>
 					<li><a href="#">Technical</a></li>
