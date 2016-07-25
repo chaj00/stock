@@ -23,7 +23,10 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="kitri.final.stock" />
+	<context:component-scan base-package="bingdata" />
+	<context:component-scan base-package="fundamental" />
+	<context:component-scan base-package="technical" />
+	<context:component-scan base-package="stock" />
 	
 	<!-- tiles 작업할 수 있도록 설정 -->
 	<beans:bean id="tilesConfigurer"
