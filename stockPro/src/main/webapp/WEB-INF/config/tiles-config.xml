@@ -5,30 +5,13 @@
 <tiles-definitions>
 	<definition name="indexTemplate" template="/WEB-INF/layout/indexLayout.jsp">
 		<put-attribute name="top" value="/WEB-INF/layout/top.jsp" />
-		<put-attribute name="banner" value="/WEB-INF/product/topproduct.jsp" />
-		<put-attribute name="content" value="/WEB-INF/product/prdlist.jsp" />
-	</definition>
-	<definition name="pageTemplate" template="/WEB-INF/layout/mainLayout.jsp">
-		<put-attribute name="top" value="/WEB-INF/layout/top.jsp" />
-		<put-attribute name="content" value="/WEB-INF/product/prdlist.jsp" />
+		<put-attribute name="content" value="/WEB-INF/layout/content.jsp" />
 	</definition>
 
 	<definition name="index" extends="indexTemplate">
 	</definition>
-	<definition name="product/list" extends="pageTemplate">
-	</definition>
-	<definition name="product/read" extends="pageTemplate">
-		<put-attribute name="content" value="/WEB-INF/product/proRead.jsp" />
-	</definition>
-	<!-- <definition name="product/list" extends="mainTemplate"> <put-attribute 
-		name="content" value="/WEB-INF/product/prdlist.jsp"/> </definition> <definition 
-		name="member/login" extends="mainTemplate"> <put-attribute name="content" 
-		value="/WEB-INF/member/login.jsp"/> </definition> <definition name="board/list" 
-		extends="mainTemplate"> <put-attribute name="content" value="/WEB-INF/board/list.jsp"/> 
-		</definition> <definition name="board/view" extends="viewTemplate"> <put-attribute 
-		name="middle" value="/WEB-INF/board/view.jsp"/> <put-attribute name="content" 
-		value="/WEB-INF/board/list.jsp"/> </definition> <definition name="board/write" 
-		extends="mainTemplate"> <put-attribute name="content" value="/WEB-INF/board/write.jsp"/> 
-		</definition> <definition name="board/modify" extends="mainTemplate"> <put-attribute 
-		name="content" value="/WEB-INF/board/modify.jsp"/> </definition> -->
+	
+	<!-- <definition name="test" extends="mainTemplate">
+		<put-attribute name="content" value="/WEB-INF/test/result.jsp"/>
+	</definition> -->
 </tiles-definitions>
