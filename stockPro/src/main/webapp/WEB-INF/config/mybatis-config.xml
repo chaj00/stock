@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<typeAliases>
+	<!-- <typeAliases>
 		<typeAlias type="product.dto.ProductDTO" alias="product"/>
 		<typeAlias type="member.dto.MemberDTO" alias="member"/>
 		<typeAlias type="product.comment.dto.ProductCommentDTO" 
@@ -12,5 +12,5 @@
 	<mappers>
 		<mapper resource="mapper/ProductMapper.xml"/>
 		<mapper resource="mapper/ProductCommentMapper.xml"/>
-	</mappers>
+	</mappers> -->
 </configuration>
