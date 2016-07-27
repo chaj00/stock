@@ -23,6 +23,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- 어노테이션을 사용하기 위한 설정 -->
 	<context:component-scan base-package="bingdata" />
 	<context:component-scan base-package="fundamental" />
 	<context:component-scan base-package="technical" />
