@@ -20,7 +20,7 @@
 					<li class="divider-vertical">aaa</li>
 					<li><a href="#">Fundamental</a></li>
 				 	<li class="divider-vertical"></li>
-					<li><a href="#">Technical</a></li>
+					<li><a href="/stock/goldencross.do">Technical</a></li>
 					<li class="divider-vertical"></li>
 					<li><a href="#">Bigdata</a></li>
 					<li class="divider-vertical"></li>

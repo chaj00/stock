@@ -11,6 +11,11 @@
 	<definition name="index" extends="indexTemplate">
 	</definition>
 	
+	<definition name="goldencross" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/goldencross.jsp"/>
+	</definition>
+	
+	
 	<!-- <definition name="test" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/test/result.jsp"/>
 	</definition> -->
