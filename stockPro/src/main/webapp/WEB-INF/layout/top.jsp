@@ -17,11 +17,15 @@
 		
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/stock/index.do">HOME</a></li>
-					<li class="divider-vertical">aaa</li>
 					<li><a href="#">Fundamental</a></li>
-				 	<li class="divider-vertical"></li>
-					<li><a href="/stock/goldencross.do">Technical</a></li>
-					<li class="divider-vertical"></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Technical 
+																						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/stock/goldencross.do?mode=20">GoldenCross</a></li>
+							<li><a href="">RSI</a></li>
+						</ul>
+					</li>
 					<li><a href="#">Bigdata</a></li>
 					<li class="divider-vertical"></li>
 					

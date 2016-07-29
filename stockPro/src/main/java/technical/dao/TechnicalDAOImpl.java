@@ -14,13 +14,18 @@ public class TechnicalDAOImpl implements TechnicalDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public List<StockDInfoDTO> getStockCodeList() {
+	public List<String> getStockCodeList() {
 		return sqlSession.selectList("finalpro.technical.codelist");
 	}
 
 	@Override
 	public List<StockDInfoDTO> getStockInfoList(String code) {
 		return sqlSession.selectList("finalpro.technical.infolist", code);
+	}
+
+	@Override
+	public List<StockDInfoDTO> getWholeStockInfoList(String day) {
+		return sqlSession.selectList("finalpro.technical.whole_infolist", day);
 	}
 
 }

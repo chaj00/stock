@@ -6,11 +6,14 @@
   
   
  <mapper namespace="finalpro.technical" >
- 	<select id="codelist"  resultType="stockdinfo">
- 		select * from stockcode 
+ 	<select id="codelist"  resultType="String">
+ 		select code from stockcode 
  	</select>
  	
  	<select id="infolist"  parameterType="String" resultType="stockdinfo">
- 		select c.*, i.* from stockcode c, stockdinfo i where c.code = i.code and i.code=#{code}
+ 		<!-- <![CDATA[  select c.*, i.* from stockcode c, stockdinfo i where c.code = i.code and i.code=#{code} and rownum <=200 ]]> -->
+ 	</select>
+ 	<select id="whole_infolist" parameterType="String" resultType="stockdinfo">
+ 		<![CDATA[  select c.*, i.* from stockcode c, stockdinfo i where c.code = i.code and day>=#{day} ]]>
  	</select>
  </mapper>  
