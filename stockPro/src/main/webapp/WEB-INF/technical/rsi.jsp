@@ -1,29 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>GoldenCross</title>
-
+<title>RSI</title>
 </head>
 <body>
 	<div id="container" class="container">
-		<h1><strong>GoldenCross</strong></h1>
+		<h1><strong>LOW RSI</strong></h1>
 		<div class="radio text-center">
 		<form id="radioform">
 			<h3>
 				<c:choose>
-					<c:when test="${mode==20}">
-						<label class="radio-inline"><input  type="radio" name="mode" value=20 checked >5-20일 골든크로스(단기) </label>
-						<label class="radio-inline"><input  type="radio" name="mode" value=60 >20-60일 골든크로스(중기)</label>
+					<c:when test="${mode==7}">
+						<label class="radio-inline"><input  type="radio" name="mode" value=7 checked >7일 RSI</label>
+						<label class="radio-inline"><input  type="radio" name="mode" value=14 >14일 RSI</label>
+						<label class="radio-inline"><input  type="radio" name="mode" value=21 >21일 RSI</label>
 					</c:when>
-					<c:otherwise>
-						<label class="radio-inline"><input  type="radio" name="mode" value=20 >5-20일 골든크로스(단기)</label>
-						<label class="radio-inline"><input  type="radio" name="mode" value=60 checked >20-60일 골든크로스(중기)</label>
-					</c:otherwise>
+					<c:when test="${mode==14}">
+						<label class="radio-inline"><input  type="radio" name="mode" value=7 >7일 RSI</label>
+						<label class="radio-inline"><input  type="radio" name="mode" value=14 checked>14일 RSI</label>
+						<label class="radio-inline"><input  type="radio" name="mode" value=21 >21일 RSI</label>
+					</c:when>
+					<c:when test="${mode==21}">
+						<label class="radio-inline"><input  type="radio" name="mode" value=7 >7일 RSI</label>
+						<label class="radio-inline"><input  type="radio" name="mode" value=14 >14일 RSI</label>
+						<label class="radio-inline"><input  type="radio" name="mode" value=21 checked>21일 RSI</label>
+					</c:when>
 				</c:choose>
 			</h3>
 			</form>
@@ -65,19 +71,18 @@
 			</table>
 		</div>
 	</div>
-	
-	<footer class="container-fluid text-center">
-  		<p>Footer Text</p>
-	</footer>
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('input:radio[name=mode]').change(function(){
-			if (this.value == 20){
-				var url ='http://localhost:8088/stock/goldencross.do?mode=20';
+			if (this.value == 7){
+				var url ='http://localhost:8088/stock/rsi.do?mode=7';
 				$(location).attr('href',url);
-			}else if(this.value == 60){
-				var url ='http://localhost:8088/stock/goldencross.do?mode=60';
+			}else if(this.value == 14){
+				var url ='http://localhost:8088/stock/rsi.do?mode=14';
+				$(location).attr('href',url);
+			}else if(this.value == 21){
+				var url ='http://localhost:8088/stock/rsi.do?mode=21';
 				$(location).attr('href',url);
 			}
 		});

@@ -3,6 +3,7 @@ package technical.service;
 import java.util.List;
 
 import technical.dto.MovingAverageDTO;
+import technical.dto.RsiDTO;
 import technical.dto.StockDInfoDTO;
 
 public interface TechnicalService {
@@ -12,7 +13,7 @@ public interface TechnicalService {
 	
 	//해당 종목의 주식정보 리스트
 	List<StockDInfoDTO> getStockInfoList(String code);
-	
+	//모든 종목 틍정 날짜부터 주식정보 가져오기
 	List<StockDInfoDTO> getWholeStockInfoList(String day);
 
 	
@@ -22,5 +23,12 @@ public interface TechnicalService {
 	//골든크로스 체크
 	Boolean isGoldencross(List<MovingAverageDTO> movingAvgList, String mode);
 	
+	//주식정보 검색 시작일 
+	String getSearchStartDay(String mode);
 	
+	//rsi 계산
+	List<RsiDTO> getRsiList(List<StockDInfoDTO> stockInfoList);
+	
+	//low Rsi체크
+	Boolean isLowRsi(List<RsiDTO> rsiList,String mode);
 }

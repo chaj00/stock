@@ -8,6 +8,7 @@ public class StockDInfoDTO {
 	private int highPrice;
 	private int lowPrice;
 	private int endPrice;
+	private int changePrice;
 	private int volume;
 	private int totalStock;
 	private float foreigner;
@@ -17,7 +18,7 @@ public class StockDInfoDTO {
 	}
 
 	public StockDInfoDTO(String code, String name, String day, int startPrice, int highPrice, int lowPrice,
-			int endPrice, int volume, int totalStock, float foreigner) {
+			int endPrice, int changePrice, int volume, int totalStock, float foreigner) {
 		super();
 		this.code = code;
 		this.name = name;
@@ -26,6 +27,7 @@ public class StockDInfoDTO {
 		this.highPrice = highPrice;
 		this.lowPrice = lowPrice;
 		this.endPrice = endPrice;
+		this.changePrice = changePrice;
 		this.volume = volume;
 		this.totalStock = totalStock;
 		this.foreigner = foreigner;
@@ -87,6 +89,14 @@ public class StockDInfoDTO {
 		this.endPrice = endPrice;
 	}
 
+	public int getChangePrice() {
+		return changePrice;
+	}
+
+	public void setChangePrice(int changePrice) {
+		this.changePrice = changePrice;
+	}
+
 	public int getVolume() {
 		return volume;
 	}
@@ -114,9 +124,11 @@ public class StockDInfoDTO {
 	@Override
 	public String toString() {
 		return "StockDInfoDTO [code=" + code + ", name=" + name + ", day=" + day + ", startPrice=" + startPrice
-				+ ", highPrice=" + highPrice + ", lowPrice=" + lowPrice + ", endPrice=" + endPrice + ", volume="
-				+ volume + ", totalStock=" + totalStock + ", foreigner=" + foreigner + "]";
+				+ ", highPrice=" + highPrice + ", lowPrice=" + lowPrice + ", endPrice=" + endPrice + ", changePrice="
+				+ changePrice + ", volume=" + volume + ", totalStock=" + totalStock + ", foreigner=" + foreigner + "]";
 	}
+
+	
 
 	
 	

@@ -15,6 +15,10 @@
 		<put-attribute name="content" value="/WEB-INF/technical/goldencross.jsp"/>
 	</definition>
 	
+	<definition name="rsi" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/rsi.jsp"/>
+	</definition>
+	
 	
 	<!-- <definition name="test" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/test/result.jsp"/>

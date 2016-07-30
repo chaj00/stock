@@ -23,7 +23,7 @@
 																						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/stock/goldencross.do?mode=20">GoldenCross</a></li>
-							<li><a href="">RSI</a></li>
+							<li><a href="/stock/rsi.do?mode=14">RSI</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Bigdata</a></li>

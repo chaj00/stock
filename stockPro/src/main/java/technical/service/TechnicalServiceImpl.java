@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import technical.dao.TechnicalDAO;
 import technical.dto.MovingAverageDTO;
+import technical.dto.RsiDTO;
 import technical.dto.StockDInfoDTO;
 import technical.logic.TechnicalLogic;
 
@@ -45,6 +46,21 @@ public class TechnicalServiceImpl implements TechnicalService{
 	@Override
 	public Boolean isGoldencross(List<MovingAverageDTO> movingAvgList, String mode) {
 		return logic.isGoldencross(movingAvgList,mode);
+	}
+
+	@Override
+	public String getSearchStartDay(String mode) {
+		return logic.getSearchStartDay(mode);
+	}
+
+	@Override
+	public List<RsiDTO> getRsiList(List<StockDInfoDTO> stockInfoList) {
+		return logic.getRsiList(stockInfoList);
+	}
+
+	@Override
+	public Boolean isLowRsi(List<RsiDTO> rsiList, String mode) {
+		return logic.isLowRsi(rsiList,mode);
 	}
 
 	
