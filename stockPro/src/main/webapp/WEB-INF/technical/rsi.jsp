@@ -55,7 +55,7 @@
 				<c:forEach var="data" items="${resultlist}" varStatus="status">
 					<tr class="row">
 						<td class="text-center">${status.index+1}</td>
-						<td class="text-center">${data.code}</td>
+						<td class="text-center"><a href="/stock/stockchart.do?code=${data.code}">${data.code}</a></td>
 						<td class="text-center">${data.name}</td>
 						<%-- <td>${data.day}</td> --%>
 						<td class="text-center">${data.startPrice}</td>

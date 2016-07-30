@@ -18,6 +18,9 @@
 	<definition name="rsi" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/technical/rsi.jsp"/>
 	</definition>
+	<definition name="stockChart" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/stockChart.jsp"/>
+	</definition>
 	
 	
 	<!-- <definition name="test" extends="mainTemplate">

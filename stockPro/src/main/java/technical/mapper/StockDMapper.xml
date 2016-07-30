@@ -7,15 +7,18 @@
   
  <mapper namespace="finalpro.technical" >
  	<select id="codelist"  resultType="String">
- 		select code from stockcode order by code asc
+ 		select code from enterprise_total order by code asc
  	</select>
  	
  	<select id="infolist"  parameterType="String" resultType="stockdinfo">
- 		<![CDATA[  select c.*, i.* from stockcode c, stockdinfo i where c.code = i.code and i.code=#{code} and rownum <=200 ]]> 
+ 		<![CDATA[  select c.name, i.* , c.totalstock 
+ 						from enterprise_total c, stockdinfo i 
+ 							where c.code = i.code and i.code=#{code}
+ 								order by i.day asc]]> 
  	</select>
  	<select id="whole_infolist" parameterType="String" resultType="stockdinfo">
  		<![CDATA[  select c.name, i.* , c.totalstock 
- 						from stockcode c, stockdinfo i 
+ 						from enterprise_total c, stockdinfo i 
  							where c.code = i.code and day>=#{day} 
  								order by c.code asc, i.day desc]]>
  	</select>

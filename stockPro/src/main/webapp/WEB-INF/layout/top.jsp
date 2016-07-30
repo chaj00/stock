@@ -27,7 +27,6 @@
 						</ul>
 					</li>
 					<li><a href="#">Bigdata</a></li>
-					<li class="divider-vertical"></li>
 					
 				</ul>
 			
