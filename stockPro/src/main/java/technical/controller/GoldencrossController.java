@@ -36,7 +36,7 @@ public class GoldencrossController {
 
 		//DB 로딩 시간측정
 		long dbEnd = System.currentTimeMillis();
-		System.out.println( "DB불러오기 실행 시간 : " + ( dbEnd - start )/1000.0 );
+		//System.out.println( "DB불러오기 실행 시간 : " + ( dbEnd - start )/1000.0 );
 		
 		//종목 코드 리스트 저장
 		List<String> codeList = service.getStockCodeList();
@@ -79,11 +79,11 @@ public class GoldencrossController {
 		}
 		
 		long isGoldencrossEnd = System.currentTimeMillis();
-		System.out.println("골든크로스 체크 실행 시간 : " + ( isGoldencrossEnd - isGoldencrossstart )/1000.0 );
+		//System.out.println("골든크로스 체크 실행 시간 : " + ( isGoldencrossEnd - isGoldencrossstart )/1000.0 );
 		
 		//실행시간측정
 		long logicEnd = System.currentTimeMillis();
-		System.out.println( "총 실행 시간 : " + ( logicEnd - start )/1000.0 );
+		//System.out.println( "총 실행 시간 : " + ( logicEnd - start )/1000.0 );
 		
 		
 		ModelAndView mav = new ModelAndView();
@@ -91,7 +91,7 @@ public class GoldencrossController {
 		mav.addObject("resultlist",resultStockInfoList);
 		mav.setViewName("goldencross");
 		
-		System.out.println("완료"+resultStockInfoList.size());
+		//System.out.println("완료"+resultStockInfoList.size());
 		return mav;
 	}
 

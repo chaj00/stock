@@ -27,11 +27,10 @@ public class MultipleChartController {
 		//주식 정보는 과거 날짜순으로 정렬 되어있음(list 인덱스가 0일때 가장 오래된 날짜 정보)
 		List<StockDInfoDTO> stockInfoList = service.getStockInfoList(code);
 		List<MovingAverageDTO> movingAvgList = service.getMovingAvgListOderByOld(stockInfoList);
-		System.out.println(movingAvgList);
 
 		// 실행시간측정
 		long logicEnd = System.currentTimeMillis();
-		System.out.println("총 실행 시간 : " + (logicEnd - start) / 1000.0);
+		//System.out.println("총 실행 시간 : " + (logicEnd - start) / 1000.0);
 
 		return new ModelAndView("stockMultipleChart", "movingAvgList",movingAvgList);
 
