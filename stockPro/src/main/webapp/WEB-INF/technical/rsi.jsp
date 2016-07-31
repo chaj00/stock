@@ -56,7 +56,7 @@
 					<tr class="row">
 						<td class="text-center">${status.index+1}</td>
 						<td class="text-center"><a href="/stock/stockchart.do?code=${data.code}">${data.code}</a></td>
-						<td class="text-center">${data.name}</td>
+						<td class="text-center"><a href="/stock/stockmultiplechart.do?code=${data.code}">${data.name}</a></td>
 						<%-- <td>${data.day}</td> --%>
 						<td class="text-center">${data.startPrice}</td>
 						<td class="text-center">${data.highPrice}</td>

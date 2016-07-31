@@ -42,6 +42,11 @@ public class TechnicalServiceImpl implements TechnicalService{
 	public List<MovingAverageDTO> getMovingAvgList(List<StockDInfoDTO> stockInfoList) {
 		return logic.getMovingAvgList(stockInfoList);
 	}
+	
+	@Override
+	public List<MovingAverageDTO> getMovingAvgListOderByOld(List<StockDInfoDTO> stockInfoList) {
+		return logic.getMovingAvgListOderByOld(stockInfoList);
+	}
 
 	@Override
 	public Boolean isGoldencross(List<MovingAverageDTO> movingAvgList, String mode) {
@@ -62,6 +67,8 @@ public class TechnicalServiceImpl implements TechnicalService{
 	public Boolean isLowRsi(List<RsiDTO> rsiList, String mode) {
 		return logic.isLowRsi(rsiList,mode);
 	}
+
+	
 
 	
 

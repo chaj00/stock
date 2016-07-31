@@ -53,6 +53,7 @@ public class GoldencrossController {
 			List<StockDInfoDTO> stockInfoList = new ArrayList<StockDInfoDTO>();
 			
 			//전체 주식 정보에서 한 종목 주식정보를 stockInfoList에 저장
+			//주식 정보는 최근 날짜순으로 정렬 되어있음(list 인덱스가 0일때 가장 최근 정보)
 			while(true){
 				if(codeList.get(i).equals(wholeStockInfoList.get(stockInfoIndex).getCode())){
 					stockInfoList.add(wholeStockInfoList.get(stockInfoIndex));

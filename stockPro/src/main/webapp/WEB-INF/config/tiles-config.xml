@@ -21,6 +21,9 @@
 	<definition name="stockChart" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/technical/stockChart.jsp"/>
 	</definition>
+	<definition name="stockMultipleChart" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/stockMultipleChart.jsp"/>
+	</definition>
 	
 	
 	<!-- <definition name="test" extends="mainTemplate">

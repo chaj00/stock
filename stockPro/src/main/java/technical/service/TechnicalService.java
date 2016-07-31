@@ -13,12 +13,16 @@ public interface TechnicalService {
 	
 	//해당 종목의 주식정보 리스트
 	List<StockDInfoDTO> getStockInfoList(String code);
+	
 	//모든 종목 틍정 날짜부터 주식정보 가져오기
 	List<StockDInfoDTO> getWholeStockInfoList(String day);
 
 	
-	//5,20,60,120 일 평균 종가 계산
+	//5,20,60,120 일 평균 종가 계산(주식정보 리스트 인덱스가 0일때 가장 최근 날짜 정보 )
 	List<MovingAverageDTO> getMovingAvgList(List<StockDInfoDTO> stockInfoList);
+	
+	//5,20,60,120 일 평균 종가 계산(주식정보 리스트 인덱스가 0일때 가장 오래된 날짜 정보 )
+	List<MovingAverageDTO> getMovingAvgListOderByOld(List<StockDInfoDTO> stockInfoList);
 	
 	//골든크로스 체크
 	Boolean isGoldencross(List<MovingAverageDTO> movingAvgList, String mode);

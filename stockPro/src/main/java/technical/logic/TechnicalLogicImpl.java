@@ -13,7 +13,8 @@ import technical.dto.StockDInfoDTO;
 
 @Repository("technicallogic")
 public class TechnicalLogicImpl implements TechnicalLogic {
-
+	
+	//주식정보 리스트의 인덱스가 0일때 가장 최근 날짜 정보
 	@Override
 	public List<MovingAverageDTO> getMovingAvgList(List<StockDInfoDTO> stockInfoList) {
 
@@ -71,7 +72,66 @@ public class TechnicalLogicImpl implements TechnicalLogic {
 		}
 		return movingAvgList;
 	}
+	
+	//주식정보 리스트의 인덱스가 0일때 가장 오래된 날짜 정보
+	@Override
+	public List<MovingAverageDTO> getMovingAvgListOderByOld(List<StockDInfoDTO> stockInfoList) {
+		List<MovingAverageDTO> movingAvgList = new ArrayList<MovingAverageDTO>();
 
+		int listSize = stockInfoList.size();
+		for (int i = 0; i < listSize; i++) {
+			// 5일 평균 종가 계산
+			int fiveTotal = 0;
+			int fiveAvg = 0;
+			if ( i >= 5) {
+				for (int j = 0; j < 5; j++) {
+					fiveTotal = fiveTotal + stockInfoList.get(i - j).getEndPrice();
+				}
+				fiveAvg = fiveTotal / 5;
+			}
+
+			// 20일 평균 종가 계산
+			int twentyTotal = 0;
+			int twentyAvg = 0;
+			if (i >= 20) {
+				for (int j = 0; j < 20; j++) {
+					twentyTotal = twentyTotal + stockInfoList.get(i - j).getEndPrice();
+				}
+				twentyAvg = twentyTotal / 20;
+			}
+
+			// 60일 평균 종가 계산
+			int sixtyTotal = 0;
+			int sixtyAvg = 0;
+			if (i >= 60) {
+				for (int j = 0; j < 60; j++) {
+					sixtyTotal = sixtyTotal + stockInfoList.get(i - j).getEndPrice();
+				}
+				sixtyAvg = sixtyTotal / 60;
+			}
+
+			// 120일 평균 종가 계산
+			int oneTwentyTotal = 0;
+			int oneTwentyAvg = 0;
+			// if (i >= 120) {
+			// for (int j = 0; j < 120; j++) {
+			// oneTwentyTotal = oneTwentyTotal + stockInfoList.get(i - j).getEndPrice();
+			// }
+			// oneTwentyAvg = oneTwentyTotal / 120;
+			// }
+
+			String day = stockInfoList.get(i).getDay();
+			int endPrice = stockInfoList.get(i).getEndPrice();
+			MovingAverageDTO movingAvg = new MovingAverageDTO(day, endPrice, fiveAvg, twentyAvg, sixtyAvg,
+					oneTwentyAvg);
+			movingAvgList.add(movingAvg);
+
+		}
+		return movingAvgList;
+	}
+	
+	
+	//주식정보 리스트의 인덱스가 0일때 가장 최근 날짜 정보
 	@Override
 	public Boolean isGoldencross(List<MovingAverageDTO> movingAvgList, String mode) {
 		int count = 0;
@@ -160,7 +220,8 @@ public class TechnicalLogicImpl implements TechnicalLogic {
 		return day;
 
 	}
-
+	
+	//주식정보 리스트의 인덱스가 0일때 가장 최근 날짜 정보
 	@Override
 	public List<RsiDTO> getRsiList(List<StockDInfoDTO> stockInfoList) {
 		int listSize = stockInfoList.size();
@@ -238,7 +299,8 @@ public class TechnicalLogicImpl implements TechnicalLogic {
 		}
 		return rsiList;
 	}
-
+	
+	//주식정보 리스트의 인덱스가 0일때 가장 최근 날짜 정보
 	@Override
 	public Boolean isLowRsi(List<RsiDTO> rsiList,String mode) {
 		Boolean result=false;
@@ -264,5 +326,7 @@ public class TechnicalLogicImpl implements TechnicalLogic {
 		
 		return result;
 	}
+
+	
 
 }

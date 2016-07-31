@@ -10,6 +10,8 @@ public interface TechnicalLogic {
 	
 	List<MovingAverageDTO> getMovingAvgList(List<StockDInfoDTO> stockInfoList);
 	
+	List<MovingAverageDTO> getMovingAvgListOderByOld(List<StockDInfoDTO> stockInfoList);
+	
 	Boolean isGoldencross(List<MovingAverageDTO> movingAvgList, String mode);
 	
 	String getSearchStartDay(String mode);
