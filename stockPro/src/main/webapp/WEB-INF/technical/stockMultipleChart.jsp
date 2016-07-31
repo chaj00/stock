@@ -27,9 +27,12 @@ $(function() {
 	<c:forEach  var="movingAvg" items="${movingAvgList}">
 		dayList.push("${movingAvg.getDay()}")
 		endPriceList.push("${movingAvg.getEndPrice()}")
-		fiveAvgList.push("${movingAvg.getFiveAvg()}")
-		twentyAvgList.push("${movingAvg.getTwentyAvg()}")
-		sixtyAvgList.push("${movingAvg.getSixtyAvg()}")
+		if ("${movingAvg.getFiveAvg()!=0}"){
+			fiveAvgList.push("${movingAvg.getFiveAvg()}")
+			twentyAvgList.push("${movingAvg.getTwentyAvg()}")
+			sixtyAvgList.push("${movingAvg.getSixtyAvg()}")
+
+		}
 	</c:forEach>
 	
 	var endPrice = [],
