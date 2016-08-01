@@ -1,23 +1,21 @@
 package fundamental.logic;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
 
 import fundamental.dto.BpsDTO;
 import fundamental.dto.EnterpriseFinanceDTO;
-import fundamental.dto.EnterpriseTotalDTO;
 import fundamental.dto.EpsDTO;
 
-public class LOGICImpl implements LOGIC{
+@Repository("fundamentallogic")
+public class LOGICImpl implements LOGIC {
 
 	@Override
-	public ArrayList<BpsDTO> bps(ArrayList<EnterpriseFinanceDTO> list) {
-		EnterpriseFinanceDTO info = new EnterpriseFinanceDTO();
-		ArrayList<BpsDTO> bpsEpsList = new ArrayList<BpsDTO>();
-		EnterpriseTotalDTO entTotal = new EnterpriseTotalDTO(); 
+	public BpsDTO bps(EnterpriseFinanceDTO info, int totalStock) {
 		
-		for(int i =0 ; i<list.size();i++){
-		info = list.get(i);
-			//각 기업의 자산 호출
+			double asset_05y = info.getAsset_05y();
 			double asset_06y = info.getAsset_06y();
 			double asset_07y = info.getAsset_07y();
 			double asset_08y = info.getAsset_08y();
@@ -28,140 +26,172 @@ public class LOGICImpl implements LOGIC{
 			double asset_13y = info.getAsset_13y();
 			double asset_14y = info.getAsset_14y();
 			double asset_15y = info.getAsset_15y();
-			
-			//`16~`19년 예상 자산을 구하기 위한 `12~`19년도 예상 자산 증가율 계산
-			double asset_1213y_increaseRatio = asset_12y/asset_13y;
-			double asset_1314y_increaseRatio = asset_13y/asset_14y;
-			double asset_1415y_increaseRatio = asset_14y/asset_15y;
-			//`16년도 이후 예상 자산 계산을 위한 가중치 부여 가장 최근 증가율부터 비율(3:2:1)
-			double asset_1516y_increaseRatio = (((asset_1213y_increaseRatio*1)+
-												 (asset_1314y_increaseRatio*2)+
-											  	 (asset_1415y_increaseRatio*3))/6)/10;
-			double asset_1617y_increaseRatio = (((asset_1314y_increaseRatio*1)+
-											 	 (asset_1415y_increaseRatio*2)+
-												 (asset_1516y_increaseRatio*3))/6)/10;
-			double asset_1718y_increaseRatio = (((asset_1415y_increaseRatio*1)+
-										     	 (asset_1516y_increaseRatio*2)+
-											     (asset_1617y_increaseRatio*3))/6)/10;
-			double asset_1819y_increaseRatio = (((asset_1516y_increaseRatio*1)+
-										  	   	 (asset_1617y_increaseRatio*2)+
-										  	   	 (asset_1718y_increaseRatio*3))/6)/10;
-			
-			//`16~`19년 예상 자산
-			double asset_16y = (asset_1516y_increaseRatio*asset_15y)+asset_15y;
-			double asset_17y = (asset_1617y_increaseRatio*asset_16y)+asset_16y;
-			double asset_18y = (asset_1718y_increaseRatio*asset_17y)+asset_17y;
-			double asset_19y = (asset_1819y_increaseRatio*asset_18y)+asset_18y;
+			double asset_16y = info.getAsset_16y();
+			double asset_17y = info.getAsset_17y();
+			double asset_18y = info.getAsset_18y();
+			double asset_19y = info.getAsset_19y();
+
 			
 			
-			double capitalstock = entTotal.getTotalstock();
-			//int weekCount = stockClose.getWeek();
+			// `16~`19년 예상 자산을 구하기 위한 `12~`19년도 예상 자산 증가율 계산
+			double asset_1213y_increaseRatio_notyet = (double) asset_12y / asset_13y;
+			double asset_1314y_increaseRatio_notyet = (double) asset_13y / asset_14y;
+			double asset_1415y_increaseRatio_notyet = (double) asset_14y / asset_15y;
+			double asset_1213y_increaseRatio = Math.round(asset_1213y_increaseRatio_notyet * 10d) / 10d;
+			double asset_1314y_increaseRatio = Math.round(asset_1314y_increaseRatio_notyet * 10d) / 10d;
+			double asset_1415y_increaseRatio = Math.round(asset_1415y_increaseRatio_notyet * 10d) / 10d;
+
+			System.out.println("asset_1415y_increaseRatio : " + asset_1415y_increaseRatio);
+
+			// `16년도 이후 예상 자산 계산을 위한 가중치 부여 가장 최근 증가율부터 비율(3:2:1)
+			double asset_1516y_increaseRatio_notyet = (((asset_1213y_increaseRatio * 1)
+					+ (asset_1314y_increaseRatio * 2) + (asset_1415y_increaseRatio * 3)) / 6) / 10;
+			double asset_1516y_increaseRatio = Math.round(asset_1516y_increaseRatio_notyet * 1000d) / 1000d;
+			double asset_1617y_increaseRatio_notyet = (((asset_1314y_increaseRatio * 1)
+					+ (asset_1415y_increaseRatio * 2) + (asset_1516y_increaseRatio * 3)) / 6) / 10;
+			double asset_1617y_increaseRatio = Math.round(asset_1617y_increaseRatio_notyet * 1000d) / 1000d;
+			double asset_1718y_increaseRatio_notyet = (((asset_1415y_increaseRatio * 1)
+					+ (asset_1516y_increaseRatio * 2) + (asset_1617y_increaseRatio * 3)) / 6) / 10;
+			double asset_1718y_increaseRatio = Math.round(asset_1718y_increaseRatio_notyet * 1000d) / 1000d;
+			double asset_1819y_increaseRatio_notyet = (((asset_1516y_increaseRatio * 1)
+					+ (asset_1617y_increaseRatio * 2) + (asset_1718y_increaseRatio * 3)) / 6) / 10;
+			double asset_1819y_increaseRatio = Math.round(asset_1819y_increaseRatio_notyet * 1000d) / 1000d;
+			System.out.println("asset_1516y_increaseRatio_notyet : " + asset_1516y_increaseRatio_notyet);
+			System.out.println("asset_1617y_increaseRatio_notyet : " + asset_1617y_increaseRatio_notyet);
+			System.out.println("asset_1718y_increaseRatio_notyet : " + asset_1718y_increaseRatio_notyet);
+			System.out.println("asset_1819y_increaseRatio_notyet : " + asset_1819y_increaseRatio_notyet);
+			System.out.println(
+					"asset_1516y_increaseRatio : " + Math.round(asset_1516y_increaseRatio_notyet * 1000d) / 1000d);
+			System.out.println(
+					"asset_1617y_increaseRatio : " + Math.round(asset_1617y_increaseRatio_notyet * 1000d) / 1000d);
+			System.out.println(
+					"asset_1718y_increaseRatio : " + Math.round(asset_1718y_increaseRatio_notyet * 1000d) / 1000d);
+			System.out.println(
+					"asset_1819y_increaseRatio : " + Math.round(asset_1819y_increaseRatio_notyet * 1000d) / 1000d);
+
+			// `16~`19년 예상 자산
+			double asset_16y_notyet = (asset_1516y_increaseRatio * asset_15y) + asset_15y;
+			double asset_17y_notyet = (asset_1617y_increaseRatio * asset_16y_notyet) + asset_16y_notyet;
+			double asset_18y_notyet = (asset_1718y_increaseRatio * asset_17y_notyet) + asset_17y_notyet;
+			double asset_19y_notyet = (asset_1819y_increaseRatio * asset_18y_notyet) + asset_18y_notyet;
+
+			// `16~`19년 예상 자산 소수점 둘째자리에서 반올림
+			asset_16y = Math.round(asset_16y_notyet * 1d) / 1d;
+			asset_17y = Math.round(asset_17y_notyet * 1d) / 1d;
+			asset_18y = Math.round(asset_18y_notyet * 1d) / 1d;
+			asset_19y = Math.round(asset_19y_notyet * 1d) / 1d;
+			System.out.println("info.getCode()"+info.getCode());
+			
+			System.out.println("asset_13y : " + asset_13y);
+			System.out.println("asset_14y : " + asset_14y);
+			System.out.println("asset_15y : " + asset_15y);
+			System.out.println("asset_16y : " + asset_16y);
+			System.out.println("asset_17y : " + asset_17y);
+			System.out.println("asset_18y : " + asset_18y);
+			System.out.println("asset_19y : " + asset_19y);
+			System.out.println("asset_1819y_increaseRatio : " + asset_1819y_increaseRatio);
+
+			// int weekCount = stockClose.getWeek();
 			
 			BpsDTO bps = new BpsDTO();
-			//BPS 계산
-			bps.setBps06y6((asset_06y/capitalstock)*6);
-			bps.setBps06y9((asset_06y/capitalstock)*9);
-			bps.setBps06y12((asset_06y/capitalstock)*12);
-			bps.setBps06y16((asset_06y/capitalstock)*16);
+			double billion = 100000000;
+			// BPS 계산
+			bps.setBps06y(Math.round((asset_06y * billion / totalStock) * 1d) / 1d);
+			// bps.setBps06y(Math.round((asset_06y/totalStock);
+			bps.setBps06y2(Math.round(((asset_06y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps06y3(Math.round(((asset_06y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps06y4(Math.round(((asset_06y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps07y(Math.round((asset_07y * billion / totalStock) * 1d) / 1d);
+			bps.setBps07y2(Math.round(((asset_07y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps07y3(Math.round(((asset_07y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps07y4(Math.round(((asset_07y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps08y(Math.round((asset_08y * billion / totalStock) * 1d) / 1d);
+			bps.setBps08y2(Math.round(((asset_08y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps08y3(Math.round(((asset_08y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps08y4(Math.round(((asset_08y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps09y(Math.round((asset_09y * billion / totalStock) * 1d) / 1d);
+			bps.setBps09y2(Math.round(((asset_09y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps09y3(Math.round(((asset_09y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps09y4(Math.round(((asset_09y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps10y(Math.round((asset_10y * billion / totalStock) * 1d) / 1d);
+			bps.setBps10y2(Math.round(((asset_10y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps10y3(Math.round(((asset_10y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps10y4(Math.round(((asset_10y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps11y(Math.round((asset_11y * billion / totalStock) * 1d) / 1d);
+			bps.setBps11y2(Math.round(((asset_11y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps11y3(Math.round(((asset_11y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps11y4(Math.round(((asset_11y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps12y(Math.round((asset_12y * billion / totalStock) * 1d) / 1d);
+			bps.setBps12y2(Math.round(((asset_12y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps12y3(Math.round(((asset_12y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps12y4(Math.round(((asset_12y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps13y(Math.round((asset_13y * billion / totalStock) * 1d) / 1d);
+			bps.setBps13y2(Math.round(((asset_13y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps13y3(Math.round(((asset_13y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps13y4(Math.round(((asset_13y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps14y(Math.round((asset_14y * billion / totalStock) * 1d) / 1d);
+			bps.setBps14y2(Math.round(((asset_14y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps14y3(Math.round(((asset_14y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps14y4(Math.round(((asset_14y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps15y(Math.round((asset_15y * billion / totalStock) * 1d) / 1d);
+			bps.setBps15y2(Math.round(((asset_15y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps15y3(Math.round(((asset_15y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps15y4(Math.round(((asset_15y * billion / totalStock) * 4) * 1d) / 1d);
+
+			// 16년, 17년, 18년, 19년도 예상 bps 계산 시작
+			bps.setBps16y(Math.round((asset_16y * billion / totalStock) * 1d) / 1d);
+			bps.setBps16y2(Math.round(((asset_16y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps16y3(Math.round(((asset_16y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps16y4(Math.round(((asset_16y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps17y(Math.round((asset_17y * billion / totalStock) * 1d) / 1d);
+			bps.setBps17y2(Math.round(((asset_17y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps17y3(Math.round(((asset_17y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps17y4(Math.round(((asset_17y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps18y(Math.round((asset_18y * billion / totalStock) * 1d) / 1d);
+			bps.setBps18y2(Math.round(((asset_18y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps18y3(Math.round(((asset_18y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps18y4(Math.round(((asset_18y * billion / totalStock) * 4) * 1d) / 1d);
+
+			bps.setBps19y(Math.round((asset_19y * billion / totalStock) * 1d) / 1d);
+			bps.setBps19y2(Math.round(((asset_19y * billion / totalStock) * 2) * 1d) / 1d);
+			bps.setBps19y3(Math.round(((asset_19y * billion / totalStock) * 3) * 1d) / 1d);
+			bps.setBps19y4(Math.round(((asset_19y * billion / totalStock) * 4) * 1d) / 1d);
+			// 16년, 17년, 18년, 19년도 예상 bps 계산 끝
+			System.out.println("bps logic1");
+			System.out.println("totalstock : " + totalStock);
+			System.out.println("Math.round((asset_14y/totalStock)*billion*1d) / 1d : "
+					+ Math.round(((asset_14y / totalStock) * billion) * 1d) / 1d);
+			System.out.println("Math.round((asset_15y/totalStock)*billion*1d) / 1d : "
+					+ Math.round(((asset_15y / totalStock) * billion) * 1d) / 1d);
+			System.out.println("Math.round((asset_16y/totalStock)*billion*1d) / 1d : "
+					+ Math.round((asset_16y * billion / totalStock) * 1d) / 1d);
+			System.out.println("Math.round((asset_17y/totalStock)*billion*1d) / 1d : "
+					+ Math.round((asset_17y * billion / totalStock) * 1d) / 1d);
 			
-			bps.setBps07y6((asset_07y/capitalstock)*6);
-			bps.setBps07y9((asset_07y/capitalstock)*9);
-			bps.setBps07y12((asset_07y/capitalstock)*12);
-			bps.setBps07y16((asset_07y/capitalstock)*16);
-			
-			bps.setBps08y6((asset_08y/capitalstock)*6);
-			bps.setBps08y9((asset_08y/capitalstock)*9);
-			bps.setBps08y12((asset_08y/capitalstock)*12);
-			bps.setBps08y16((asset_08y/capitalstock)*16);
-			
-			bps.setBps09y6((asset_09y/capitalstock)*6);
-			bps.setBps09y9((asset_09y/capitalstock)*9);
-			bps.setBps09y12((asset_09y/capitalstock)*12);
-			bps.setBps09y16((asset_09y/capitalstock)*16);
-			
-			bps.setBps10y6((asset_10y/capitalstock)*6);
-			bps.setBps10y9((asset_10y/capitalstock)*9);
-			bps.setBps10y12((asset_10y/capitalstock)*12);
-			bps.setBps10y16((asset_10y/capitalstock)*16);
-			
-			bps.setBps11y6((asset_11y/capitalstock)*6);
-			bps.setBps11y9((asset_11y/capitalstock)*9);
-			bps.setBps11y12((asset_11y/capitalstock)*12);
-			bps.setBps11y16((asset_11y/capitalstock)*16);
-			
-			bps.setBps12y6((asset_12y/capitalstock)*6);
-			bps.setBps12y9((asset_12y/capitalstock)*9);
-			bps.setBps12y12((asset_12y/capitalstock)*12);
-			bps.setBps12y16((asset_12y/capitalstock)*16);
-			
-			bps.setBps13y6((asset_13y/capitalstock)*6);
-			bps.setBps13y9((asset_13y/capitalstock)*9);
-			bps.setBps13y12((asset_13y/capitalstock)*12);
-			bps.setBps13y16((asset_13y/capitalstock)*16);
-			
-			bps.setBps14y6((asset_14y/capitalstock)*6);
-			bps.setBps14y9((asset_14y/capitalstock)*9);
-			bps.setBps14y12((asset_14y/capitalstock)*12);
-			bps.setBps14y16((asset_14y/capitalstock)*16);
-			
-			bps.setBps15y6((asset_15y/capitalstock)*6);
-			bps.setBps15y9((asset_15y/capitalstock)*9);
-			bps.setBps15y12((asset_15y/capitalstock)*12);
-			bps.setBps15y16((asset_15y/capitalstock)*16);
-			
-			//16년, 17년, 18년, 19년도 예상 bps 계산 시작
-			bps.setBps16y6((asset_16y/capitalstock)*6);
-			bps.setBps16y9((asset_16y/capitalstock)*9);
-			bps.setBps16y12((asset_16y/capitalstock)*12);
-			bps.setBps16y16((asset_16y/capitalstock)*16);
-			
-			bps.setBps17y6((asset_17y/capitalstock)*6);
-			bps.setBps17y9((asset_17y/capitalstock)*9);
-			bps.setBps17y12((asset_17y/capitalstock)*12);
-			bps.setBps17y16((asset_17y/capitalstock)*16);
-			
-			bps.setBps18y6((asset_18y/capitalstock)*6);
-			bps.setBps18y9((asset_18y/capitalstock)*9);
-			bps.setBps18y12((asset_18y/capitalstock)*12);
-			bps.setBps18y16((asset_18y/capitalstock)*16);
-			
-			bps.setBps19y6((asset_19y/capitalstock)*6);
-			bps.setBps19y9((asset_19y/capitalstock)*9);
-			bps.setBps19y12((asset_19y/capitalstock)*12);
-			bps.setBps19y16((asset_19y/capitalstock)*16);
-			//16년, 17년, 18년, 19년도 예상 bps 계산 끝
-			
-			
-			//PBR밴드 차트 데이터  `07,~`18-> (이전년도 자산)*(1+((다음년도 자산/이번년도 자산)^(1/(이번~다음년도 주(week)수)-1))
-			bps.setPbr_07y((double)info.getAsset_06y()*(double)(1+(Math.pow((info.getAsset_08y()/info.getAsset_07y()),(1/53.0))-1)));
-			bps.setPbr_08y((double)info.getAsset_07y()*(double)(1+(Math.pow((info.getAsset_09y()/info.getAsset_08y()),(1/53.0))-1)));
-			bps.setPbr_09y((double)info.getAsset_08y()*(double)(1+(Math.pow((info.getAsset_10y()/info.getAsset_09y()),(1/53.0))-1)));
-			bps.setPbr_10y((double)info.getAsset_09y()*(double)(1+(Math.pow((info.getAsset_11y()/info.getAsset_10y()),(1/53.0))-1)));
-			bps.setPbr_11y((double)info.getAsset_10y()*(double)(1+(Math.pow((info.getAsset_12y()/info.getAsset_11y()),(1/53.0))-1)));
-			bps.setPbr_12y((double)info.getAsset_11y()*(double)(1+(Math.pow((info.getAsset_13y()/info.getAsset_12y()),(1/53.0))-1)));
-			bps.setPbr_13y((double)info.getAsset_12y()*(double)(1+(Math.pow((info.getAsset_14y()/info.getAsset_13y()),(1/53.0))-1)));
-			bps.setPbr_14y((double)info.getAsset_13y()*(double)(1+(Math.pow((info.getAsset_15y()/info.getAsset_14y()),(1/53.0))-1)));
-			bps.setPbr_15y((double)info.getAsset_14y()*(double)(1+(Math.pow((info.getAsset_16y()/info.getAsset_15y()),(1/53.0))-1)));
-			bps.setPbr_16y((double)info.getAsset_15y()*(double)(1+(Math.pow((info.getAsset_17y()/info.getAsset_16y()),(1/53.0))-1)));
-			bps.setPbr_17y((double)info.getAsset_16y()*(double)(1+(Math.pow((info.getAsset_18y()/info.getAsset_17y()),(1/53.0))-1)));
-			bps.setPbr_18y((double)info.getAsset_17y()*(double)(1+(Math.pow((info.getAsset_19y()/info.getAsset_18y()),(1/53.0))-1)));
-			
-			bpsEpsList.add(bps);
-		}
-		return bpsEpsList;
+
+		return bps;
 	}
-	
+
+
 	@Override
-	public ArrayList<EpsDTO> eps(ArrayList<EnterpriseFinanceDTO> list) {
-		EnterpriseFinanceDTO info = new EnterpriseFinanceDTO();
-		ArrayList<EpsDTO> bpsEpsList = new ArrayList<EpsDTO>();
+	public EpsDTO eps(EnterpriseFinanceDTO info, int totalStock) {
+		EnterpriseFinanceDTO finance = new EnterpriseFinanceDTO();
+		EpsDTO eps = new EpsDTO();
+
 		
-		EpsDTO bpsEps = new EpsDTO();
-		EnterpriseTotalDTO entTotal = new EnterpriseTotalDTO(); 
-		
-		
-		bpsEpsList.add(bpsEps);
-		return bpsEpsList;
+//			BpsDTO bps = new BpsDTO();
+//			epsList.add(bps);
+		return eps;
 	}
 
 }

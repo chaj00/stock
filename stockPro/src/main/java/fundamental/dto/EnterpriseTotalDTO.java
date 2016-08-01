@@ -1,5 +1,6 @@
 package fundamental.dto;
 
+
 public class EnterpriseTotalDTO {
 	String code;
 	String name;

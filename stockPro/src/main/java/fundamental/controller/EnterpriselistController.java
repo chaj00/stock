@@ -21,8 +21,6 @@ public class EnterpriselistController {
 	@RequestMapping(value = "/enterpriselist.do", method = RequestMethod.GET)
 	public ModelAndView list(){
 		ModelAndView mav = new ModelAndView();
-		List<EnterpriseTotalDTO> codelist = service.codelist();
-		
 //		mav.addObject("enterpriseinfo", service.EnterpriseList(codelist));
 		mav.setViewName("enterpriselist");
 		return mav;

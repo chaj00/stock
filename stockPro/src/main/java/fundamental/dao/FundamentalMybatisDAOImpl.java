@@ -19,17 +19,17 @@ public class FundamentalMybatisDAOImpl implements FundamentalDAO {
 	SqlSession sqlSession;
 
 	@Override
-	public List<EnterpriseTotalDTO> enterpriselist() {
-		return sqlSession.selectList("stock.fundamental.enterpriseList");
+	public List<EnterpriseTotalDTO> codeList() {
+		return sqlSession.selectList("stock.fundamental.codeList");
 	}
 
 	@Override
-	public StockCloseWDTO stockclose_w(String code) {
-		return sqlSession.selectOne("stock.fundamental.stockClose", code);
+	public List<StockCloseWDTO> stockClose() {
+		return sqlSession.selectList("stock.fundamental.closeList");
 	}
 
 	@Override
-	public EnterpriseFinanceDTO enterpriseinfo(String code) {
+	public EnterpriseFinanceDTO enterpriseFinance(String code) {
 		return sqlSession.selectOne("stock.fundamental.enterpriseFinance", code);
 	}
 }

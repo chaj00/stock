@@ -7,34 +7,38 @@
 		<put-attribute name="top" value="/WEB-INF/layout/top.jsp" />
 		<put-attribute name="content" value="/WEB-INF/layout/content.jsp" />
 	</definition>
-
+	
 	<definition name="index" extends="indexTemplate">
 	</definition>
-
-	<!-- Fundamental View Start -->
-	<definition name="fundamental_layout" template="/WEB-INF/fundamental/layout.jsp">
-		<put-attribute name="content" value="/WEB-INF/fundamental/content.jsp" />
-		<put-attribute name="left" value="/WEB-INF/fundamental/left.jsp" />
-		<put-attribute name="right" value="/WEB-INF/fundamental/right.jsp" />
-		<put-attribute name="buttom" value="/WEB-INF/fundamental/buttom.jsp" />
+	<definition name="chart_per" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_per.jsp"/>
 	</definition>
-
-	<definition name="index" extends="fundamental_layout">
+	<definition name="chart_pbr" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_pbr.jsp"/>
+	</definition>
+	
+	
+	
+	
+<!-- 	<definition name="fundamental_layout" template="/WEB-INF/fundamental/fundamental_layout.jsp">
+		<put-attribute name="top" value="/WEB-INF/layout/top.jsp" />
+		<put-attribute name="fundamental_content1" value="/WEB-INF/fundamental/content1.jsp" />
+		<put-attribute name="fundamental_content2" value="/WEB-INF/fundamental/content2.jsp" />
+		<put-attribute name="fundamental_content3" value="/WEB-INF/fundamental/content3.jsp" />
+		<put-attribute name="fundamental_left" value="/WEB-INF/fundamental/left.jsp" />
 	</definition>
 	<definition name="enterpriselist" extends="fundamental_layout">
-		<put-attribute name="left" value="/WEB-INF/fundamental/enterpriselist.jsp" />
+		<put-attribute name="fundamental_left" value="/WEB-INF/fundamental/enterpriselist.jsp" />
 	</definition>
 	<definition name="enterpriseinfo" extends="fundamental_layout">
-		<put-attribute name="buttom" value="/WEB-INF/fundamental/enterpriseinfo.jsp" />
+		<put-attribute name="fundamental_content1" value="/WEB-INF/fundamental/chart_per.jsp"/>
 	</definition>
 	<definition name="chart_per" extends="fundamental_layout">
-		<put-attribute name="content" value="/WEB-INF/fundamental/chart_per.jsp" />
+		<put-attribute name="fundamental_content2" value="/WEB-INF/fundamental/chart_pbr.jsp"/>
 	</definition>
 	<definition name="chart_pbr" extends="fundamental_layout">
-		<put-attribute name="content" value="/WEB-INF/fundamental/chart_pbr.jsp" />
-	</definition>
-	<!-- Fundamental View End -->
-
-
+		<put-attribute name="fundamental_content3" value="/WEB-INF/fundamental/enterpriseinfo.jsp"/>
+	</definition> -->
+	
 
 </tiles-definitions>
