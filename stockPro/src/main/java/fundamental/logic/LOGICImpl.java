@@ -1,8 +1,5 @@
 package fundamental.logic;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Repository;
 
 import fundamental.dto.BpsDTO;
@@ -13,9 +10,8 @@ import fundamental.dto.EpsDTO;
 public class LOGICImpl implements LOGIC {
 
 	@Override
-	public BpsDTO bps(EnterpriseFinanceDTO info, int totalStock) {
+	public BpsDTO bps(EnterpriseFinanceDTO info, int totalStock, String code) {
 		
-			double asset_05y = info.getAsset_05y();
 			double asset_06y = info.getAsset_06y();
 			double asset_07y = info.getAsset_07y();
 			double asset_08y = info.getAsset_08y();
@@ -30,8 +26,6 @@ public class LOGICImpl implements LOGIC {
 			double asset_17y = info.getAsset_17y();
 			double asset_18y = info.getAsset_18y();
 			double asset_19y = info.getAsset_19y();
-
-			
 			
 			// `16~`19년 예상 자산을 구하기 위한 `12~`19년도 예상 자산 증가율 계산
 			double asset_1213y_increaseRatio_notyet = (double) asset_12y / asset_13y;
@@ -80,6 +74,7 @@ public class LOGICImpl implements LOGIC {
 			asset_17y = Math.round(asset_17y_notyet * 1d) / 1d;
 			asset_18y = Math.round(asset_18y_notyet * 1d) / 1d;
 			asset_19y = Math.round(asset_19y_notyet * 1d) / 1d;
+			
 			System.out.println("info.getCode()"+info.getCode());
 			
 			System.out.println("asset_13y : " + asset_13y);
@@ -92,99 +87,125 @@ public class LOGICImpl implements LOGIC {
 			System.out.println("asset_1819y_increaseRatio : " + asset_1819y_increaseRatio);
 
 			// int weekCount = stockClose.getWeek();
-			
 			BpsDTO bps = new BpsDTO();
-			double billion = 100000000;
+			int billion = 100000000;
+			
 			// BPS 계산
-			bps.setBps06y(Math.round((asset_06y * billion / totalStock) * 1d) / 1d);
-			// bps.setBps06y(Math.round((asset_06y/totalStock);
-			bps.setBps06y2(Math.round(((asset_06y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps06y3(Math.round(((asset_06y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps06y4(Math.round(((asset_06y * billion / totalStock) * 4) * 1d) / 1d);
+//			bps.setBps06y(1000);
 
-			bps.setBps07y(Math.round((asset_07y * billion / totalStock) * 1d) / 1d);
-			bps.setBps07y2(Math.round(((asset_07y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps07y3(Math.round(((asset_07y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps07y4(Math.round(((asset_07y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps06y((int)(Math.round((asset_06y * billion / totalStock) * 1d) / 1d));
+			System.out.println("asset_06y : "+asset_06y);
+			System.out.println("billion : "+billion );
+			System.out.println("totalStock : "+totalStock);
+//			bps.setBps06y((int)(((int)asset_06y * (int)billion / (int)totalStock)));
+			
+			if(info.getAsset_06y()==0){
+				bps.setBps06y(0);
+				bps.setBps06y2(0);
+				bps.setBps06y3(0);
+				bps.setBps06y4(0);
+				
+			}else if (info.getAsset_06y()!=0){
+				bps.setBps06y((int)(Math.round((asset_06y * billion / totalStock) * 1d) / 1d));
+				bps.setBps06y2((int)(Math.round(((asset_06y * billion / totalStock) * 2) * 1d) / 1d));
+				bps.setBps06y3((int)(Math.round(((asset_06y * billion / totalStock) * 3) * 1d) / 1d));
+				bps.setBps06y4((int)(Math.round(((asset_06y * billion / totalStock) * 4) * 1d) / 1d));
+			}
+			
+			bps.setBps07y((int)(Math.round((asset_07y * billion / totalStock) * 1d) / 1d));
+			bps.setBps07y2((int)(Math.round(((asset_07y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps07y3((int)(Math.round(((asset_07y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps07y4((int)(Math.round(((asset_07y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps08y(Math.round((asset_08y * billion / totalStock) * 1d) / 1d);
-			bps.setBps08y2(Math.round(((asset_08y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps08y3(Math.round(((asset_08y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps08y4(Math.round(((asset_08y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps08y((int)(Math.round((asset_08y * billion / totalStock) * 1d) / 1d));
+			bps.setBps08y2((int)(Math.round(((asset_08y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps08y3((int)(Math.round(((asset_08y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps08y4((int)(Math.round(((asset_08y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps09y(Math.round((asset_09y * billion / totalStock) * 1d) / 1d);
-			bps.setBps09y2(Math.round(((asset_09y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps09y3(Math.round(((asset_09y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps09y4(Math.round(((asset_09y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps09y((int)(Math.round((asset_09y * billion / totalStock) * 1d) / 1d));
+			bps.setBps09y2((int)(Math.round(((asset_09y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps09y3((int)(Math.round(((asset_09y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps09y4((int)(Math.round(((asset_09y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps10y(Math.round((asset_10y * billion / totalStock) * 1d) / 1d);
-			bps.setBps10y2(Math.round(((asset_10y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps10y3(Math.round(((asset_10y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps10y4(Math.round(((asset_10y * billion / totalStock) * 4) * 1d) / 1d);
-			bps.setBps11y(Math.round((asset_11y * billion / totalStock) * 1d) / 1d);
-			bps.setBps11y2(Math.round(((asset_11y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps11y3(Math.round(((asset_11y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps11y4(Math.round(((asset_11y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps10y((int)(Math.round((asset_10y * billion / totalStock) * 1d) / 1d));
+			bps.setBps10y2((int)(Math.round(((asset_10y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps10y3((int)(Math.round(((asset_10y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps10y4((int)(Math.round(((asset_10y * billion / totalStock) * 4) * 1d) / 1d));
+			bps.setBps11y((int)(Math.round((asset_11y * billion / totalStock) * 1d) / 1d));
+			bps.setBps11y2((int)(Math.round(((asset_11y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps11y3((int)(Math.round(((asset_11y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps11y4((int)(Math.round(((asset_11y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps12y(Math.round((asset_12y * billion / totalStock) * 1d) / 1d);
-			bps.setBps12y2(Math.round(((asset_12y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps12y3(Math.round(((asset_12y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps12y4(Math.round(((asset_12y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps12y((int)(Math.round((asset_12y * billion / totalStock) * 1d) / 1d));
+			bps.setBps12y2((int)(Math.round(((asset_12y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps12y3((int)(Math.round(((asset_12y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps12y4((int)(Math.round(((asset_12y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps13y(Math.round((asset_13y * billion / totalStock) * 1d) / 1d);
-			bps.setBps13y2(Math.round(((asset_13y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps13y3(Math.round(((asset_13y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps13y4(Math.round(((asset_13y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps13y((int)(Math.round((asset_13y * billion / totalStock) * 1d) / 1d));
+			bps.setBps13y2((int)(Math.round(((asset_13y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps13y3((int)(Math.round(((asset_13y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps13y4((int)(Math.round(((asset_13y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps14y(Math.round((asset_14y * billion / totalStock) * 1d) / 1d);
-			bps.setBps14y2(Math.round(((asset_14y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps14y3(Math.round(((asset_14y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps14y4(Math.round(((asset_14y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps14y((int)(Math.round((asset_14y * billion / totalStock) * 1d) / 1d));
+			bps.setBps14y2((int)(Math.round(((asset_14y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps14y3((int)(Math.round(((asset_14y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps14y4((int)(Math.round(((asset_14y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps15y(Math.round((asset_15y * billion / totalStock) * 1d) / 1d);
-			bps.setBps15y2(Math.round(((asset_15y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps15y3(Math.round(((asset_15y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps15y4(Math.round(((asset_15y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps15y((int)(Math.round((asset_15y * billion / totalStock) * 1d) / 1d));
+			bps.setBps15y2((int)(Math.round(((asset_15y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps15y3((int)(Math.round(((asset_15y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps15y4((int)(Math.round(((asset_15y * billion / totalStock) * 4) * 1d) / 1d));
 
 			// 16년, 17년, 18년, 19년도 예상 bps 계산 시작
-			bps.setBps16y(Math.round((asset_16y * billion / totalStock) * 1d) / 1d);
-			bps.setBps16y2(Math.round(((asset_16y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps16y3(Math.round(((asset_16y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps16y4(Math.round(((asset_16y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps16y((int)(Math.round((asset_16y * billion / totalStock) * 1d) / 1d));
+			bps.setBps16y2((int)(Math.round(((asset_16y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps16y3((int)(Math.round(((asset_16y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps16y4((int)(Math.round(((asset_16y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps17y(Math.round((asset_17y * billion / totalStock) * 1d) / 1d);
-			bps.setBps17y2(Math.round(((asset_17y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps17y3(Math.round(((asset_17y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps17y4(Math.round(((asset_17y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps17y((int)(Math.round((asset_17y * billion / totalStock) * 1d) / 1d));
+			bps.setBps17y2((int)(Math.round(((asset_17y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps17y3((int)(Math.round(((asset_17y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps17y4((int)(Math.round(((asset_17y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps18y(Math.round((asset_18y * billion / totalStock) * 1d) / 1d);
-			bps.setBps18y2(Math.round(((asset_18y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps18y3(Math.round(((asset_18y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps18y4(Math.round(((asset_18y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps18y((int)(Math.round((asset_18y * billion / totalStock) * 1d) / 1d));
+			bps.setBps18y2((int)(Math.round(((asset_18y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps18y3((int)(Math.round(((asset_18y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps18y4((int)(Math.round(((asset_18y * billion / totalStock) * 4) * 1d) / 1d));
 
-			bps.setBps19y(Math.round((asset_19y * billion / totalStock) * 1d) / 1d);
-			bps.setBps19y2(Math.round(((asset_19y * billion / totalStock) * 2) * 1d) / 1d);
-			bps.setBps19y3(Math.round(((asset_19y * billion / totalStock) * 3) * 1d) / 1d);
-			bps.setBps19y4(Math.round(((asset_19y * billion / totalStock) * 4) * 1d) / 1d);
+			bps.setBps19y((int)(Math.round((asset_19y * billion / totalStock) * 1d) / 1d));
+			bps.setBps19y2((int)(Math.round(((asset_19y * billion / totalStock) * 2) * 1d) / 1d));
+			bps.setBps19y3((int)(Math.round(((asset_19y * billion / totalStock) * 3) * 1d) / 1d));
+			bps.setBps19y4((int)(Math.round(((asset_19y * billion / totalStock) * 4) * 1d) / 1d));
 			// 16년, 17년, 18년, 19년도 예상 bps 계산 끝
 			System.out.println("bps logic1");
 			System.out.println("totalstock : " + totalStock);
-			System.out.println("Math.round((asset_14y/totalStock)*billion*1d) / 1d : "
+			System.out.println("(int)(Math.round((asset_14y/totalStock)*billion*1d) / 1d) : "
+					+ (int)(Math.round(((asset_14y / totalStock) * billion) * 1d) / 1d));
+			System.out.println("(int)Math.round((asset_15y/totalStock)*billion*1d) / 1d) : "
+					+ (int)(Math.round(((asset_15y / totalStock) * billion) * 1d) / 1d));
+			System.out.println("(int)Math.round((asset_16y/totalStock)*billion*1d) / 1d) : "
+					+ (int)(Math.round((asset_16y * billion / totalStock) * 1d) / 1d));
+			System.out.println("(int)Math.round((asset_17y/totalStock)*billion*1d) / 1d) : "
+					+ (int)(Math.round((asset_17y * billion / totalStock) * 1d) / 1d));
+			
+			System.out.println("Math.round((asset_14y/totalStock)*billion*1d) / 1d) : "
 					+ Math.round(((asset_14y / totalStock) * billion) * 1d) / 1d);
-			System.out.println("Math.round((asset_15y/totalStock)*billion*1d) / 1d : "
+			System.out.println("Math.round((asset_15y/totalStock)*billion*1d) / 1d) : "
 					+ Math.round(((asset_15y / totalStock) * billion) * 1d) / 1d);
-			System.out.println("Math.round((asset_16y/totalStock)*billion*1d) / 1d : "
+			System.out.println("Math.round((asset_16y/totalStock)*billion*1d) / 1d) : "
 					+ Math.round((asset_16y * billion / totalStock) * 1d) / 1d);
-			System.out.println("Math.round((asset_17y/totalStock)*billion*1d) / 1d : "
+			System.out.println("Math.round((asset_17y/totalStock)*billion*1d) / 1d) : "
 					+ Math.round((asset_17y * billion / totalStock) * 1d) / 1d);
 			
-
+			System.out.println("LOGICIMPL - bps.bps07y : " + bps.getBps07y());
+			
+			
 		return bps;
 	}
 
 
 	@Override
-	public EpsDTO eps(EnterpriseFinanceDTO info, int totalStock) {
+	public EpsDTO eps(EnterpriseFinanceDTO info, int totalStock, String code) {
 		EnterpriseFinanceDTO finance = new EnterpriseFinanceDTO();
 		EpsDTO eps = new EpsDTO();
 

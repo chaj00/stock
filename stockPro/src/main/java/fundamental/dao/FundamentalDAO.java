@@ -2,10 +2,8 @@ package fundamental.dao;
 
 import java.util.List;
 
-import fundamental.dto.BpsDTO;
 import fundamental.dto.EnterpriseFinanceDTO;
 import fundamental.dto.EnterpriseTotalDTO;
-import fundamental.dto.EpsDTO;
 import fundamental.dto.StockCloseWDTO;
 
 public interface FundamentalDAO {
@@ -16,11 +14,13 @@ public interface FundamentalDAO {
 //	List<EnterpriseTotalDTO> totalList(String code);
 	
 	//종목코드, 종가, 날짜(주단위) 리스트
-	List<StockCloseWDTO> stockClose();
+	List<StockCloseWDTO> stockClose(String code);
 	
 	//기업 재무정보
 	EnterpriseFinanceDTO enterpriseFinance(String code);
 	
+	//종가 리스트
+	List<StockCloseWDTO> closeList(String code);
 }
 
 

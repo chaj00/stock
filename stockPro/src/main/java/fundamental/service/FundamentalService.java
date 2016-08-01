@@ -10,19 +10,22 @@ import fundamental.dto.StockCloseWDTO;
 
 public interface FundamentalService {
 	//종목코드 리스트
-	List<EnterpriseTotalDTO> codelist();
+	List<EnterpriseTotalDTO> codeList();
 	
 	//종목코드, 종가, 주식총수 리스트
-	List<StockCloseWDTO> closelist();
+	List<StockCloseWDTO> stockCloseList(String code);
+	
+	//종가 리스트
+	List<StockCloseWDTO> closeList(String code);
 	
 	//기업 재무정보 리스트
 	EnterpriseFinanceDTO enterpriseFinance(String code);
 	
 	//기업정보 - BPS
-	BpsDTO bps(EnterpriseFinanceDTO enterpriseFinance, int capitalStock);
+	BpsDTO bps(EnterpriseFinanceDTO enterpriseFinance, int totalStock, String code);
 	 
 	//기업정보 - EPS
-	EpsDTO eps(EnterpriseFinanceDTO EnterpriseFinance, int capitalStock);
+	EpsDTO eps(EnterpriseFinanceDTO EnterpriseFinance, int totalStock, String code);
 	 
 }
 

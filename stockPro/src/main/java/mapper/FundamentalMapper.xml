@@ -2,40 +2,45 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="stock.fundamental">
-	<!-- 종목코드 리스트 -->
+<!-- 종목코드 리스트 -->
 	<select id="codeList" resultType="EnterpriseTotalDTO">
-		select * from enterprise_total
+		select DISTINCT t.* from ENTERPRISE_TOTAL t, ENTERPRISE_FINANCE f where t.code=f.code
 	</select>
-	<!-- 종목코드, 종목명, 주식총수 리스트 -->
-	<select id="totalList" resultType="EnterpriseTotalDTO" parameterType="String">
-		select * from enterprise_total where code =#{code} 
-	</select>
-	<!-- 종목코드, 종가, 날짜(주단위) 리스트 -->
-	<select id="closeList" resultType="EnterpriseTotalDTO" parameterType="String">
-		select * from stockclose_w where code =#{code} order by code asc, week asc
+	
+<!-- 종목코드, 종가, 날짜(주단위) 리스트 -->
+	<select id="stockCloseList" resultType="StockCloseWDTO" parameterType="String">
+		select * from StockClose_W where code=#{code} order by code, week desc
 	</select> 
-	<!-- 기업 재무정보 리스트-->
+	
+<!-- 종가 리스트 -->
+	<select id="closeList" resultType="StockCloseWDTO" parameterType="String">
+		select price from StockClose_W where code=#{code} order by code, week desc
+	</select>
+	
+<!-- 종목코드, 종목명, 주식총수 리스트 -->
+	<select id="totalList" resultType="EnterpriseTotalDTO" parameterType="String">
+		select * from enterprise_total where code =#{code} order by code desc
+	</select>
+	
+	
+<!-- 기업 재무정보 리스트-->
 	<select id="enterpriseFinance" resultType="EnterpriseFinanceDTO" parameterType="String">
 		select DISTINCT t.name, f.* from ENTERPRISE_TOTAL t, ENTERPRISE_FINANCE f where t.code=f.code and f.code=#{f.code}
 	</select>
-	<!-- 기업 종가 -->
-	<select id="stockClose" resultType="StockCloseWDTO">
-		select * from StockClose_W
-	</select>
+</mapper>
 	
 	<!-- BPS계산을 위한 기업정보 -->
 <!-- 	<select id="enterpriseFinance_BPS" resultType="fundamentalDTO" parameterType="String">
 		select DISTINCT t.name, f.* from ENTERPRISE_TOTAL t, ENTERPRISE_FINANCE f where t.code=f.code, f.code =#{code}
 	</select> 
 -->
-
 	<!-- EPS계산을 위한 기업정보 -->
 <!-- 	<select id="EnterpriseFinance_EPS" resultType="fundamentalDTO" parameterType="String">
 		select DISTINCT t.name, f.* from ENTERPRISE_TOTAL t, ENTERPRISE_FINANCE f where t.code=f.code, f.code =#{code}
 	</select> 
 -->
 
-</mapper>
+
 	
 	<!--
  	//Left 기업리스트

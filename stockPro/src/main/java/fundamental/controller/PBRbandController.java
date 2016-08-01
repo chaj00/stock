@@ -26,17 +26,22 @@ public class PBRbandController extends HttpServlet{
 		ModelAndView mav = new ModelAndView();
 //		int codelistsize = codelist.size();
 			
-		List<EnterpriseTotalDTO> codeList 		   = service.codelist();
-		EnterpriseFinanceDTO 	 enterpriseFinance = service.enterpriseFinance(codeList.get(0).getCode());
-		BpsDTO 					 bpsData 		   = service.bps(enterpriseFinance, codeList.get(0).getTotalstock());
-		List<StockCloseWDTO> 	 stockCloseList    = service.closelist();
+		List<EnterpriseTotalDTO> codeList 		   = service.codeList();
+		EnterpriseFinanceDTO 	 enterpriseFinance = service.enterpriseFinance(codeList.get(1).getCode());
+		BpsDTO 					 bps 		       = service.bps(enterpriseFinance, codeList.get(1).getTotalstock(), codeList.get(1).getCode());
+		List<StockCloseWDTO> 	 stockCloseList    = service.stockCloseList(codeList.get(1).getCode());
+		List<StockCloseWDTO>	 closeList		   = service.closeList(codeList.get(1).getCode());
 		
+		System.out.println("close : "+closeList.get(0).getPrice());
+		System.out.println("bps : "+bps.getBps06y());
 		System.out.println("codeList.get(0).getName() : "+codeList.get(0).getName());
-
+		System.out.println("CONTROLLER!!!!!! : "+stockCloseList);
+		
+		mav.addObject("closeList", closeList);
 		mav.addObject("codeList", codeList);
 		mav.addObject("enterpriseFinance",enterpriseFinance);
-		mav.addObject("bpsData",bpsData);
-		mav.addObject("stockClose",stockCloseList);
+		mav.addObject("bps",bps);
+		mav.addObject("stockCloseList",stockCloseList);
 		mav.setViewName("chart_pbr");
 		return mav;
 	}

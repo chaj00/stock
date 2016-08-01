@@ -13,7 +13,6 @@ import fundamental.dto.EnterpriseTotalDTO;
 import fundamental.dto.EpsDTO;
 import fundamental.dto.StockCloseWDTO;
 import fundamental.logic.LOGIC;
-import fundamental.logic.LOGICImpl;
 
 @Service
 public class FundamentalServiceImpl implements FundamentalService{
@@ -24,17 +23,24 @@ public class FundamentalServiceImpl implements FundamentalService{
 	@Autowired
 	@Qualifier("fundamentallogic")
 	LOGIC logic;
-	
+	 
 	@Override
-	public List<EnterpriseTotalDTO> codelist() {
+	public List<EnterpriseTotalDTO> codeList() {
 		return dao.codeList();
 	}
 	
 	@Override
-	public List<StockCloseWDTO> closelist() {
-		return dao.stockClose();
+	public List<StockCloseWDTO> stockCloseList(String code) {
+		System.out.println("SERVICE!!!!!!!!!!!!~!(stockClosetList) : "+dao.stockClose(code).get(0).getPrice());
+		return dao.stockClose(code);
 	}
-
+	
+	@Override
+	public List<StockCloseWDTO> closeList(String code) {
+		System.out.println("SERVICE!!!!!!!!!!!!~!(closetList) : "+dao.closeList(code).get(0).getPrice());
+		return dao.closeList(code);
+	}
+	
 	@Override
 	public EnterpriseFinanceDTO enterpriseFinance(String code) {
 		return dao.enterpriseFinance(code);
@@ -42,18 +48,18 @@ public class FundamentalServiceImpl implements FundamentalService{
 
 
 	@Override
-	public BpsDTO bps(EnterpriseFinanceDTO EnterpriseFinance, int capitalStock) {
-		LOGIC logic = new LOGICImpl();
-		BpsDTO bps = logic.bps(EnterpriseFinance, capitalStock);
-		System.out.println("Service bps");
+	public BpsDTO bps(EnterpriseFinanceDTO EnterpriseFinance, int totalStock, String code) {
+		BpsDTO bps = logic.bps(EnterpriseFinance, totalStock, code);
+		System.out.println("Service bps : "+bps.getBps07y());
 		return bps;
 	}
 	
 	@Override
-	public EpsDTO eps(EnterpriseFinanceDTO EnterpriseFinance, int capitalStock) {
-		LOGIC logic = new LOGICImpl();
-		EpsDTO eps = logic.eps(EnterpriseFinance, capitalStock);
+	public EpsDTO eps(EnterpriseFinanceDTO EnterpriseFinance, int totalStock, String code) {
+		EpsDTO eps = logic.eps(EnterpriseFinance, totalStock, code);
 		System.out.println("Service eps");
 		return eps;
 	}
+
+
 }

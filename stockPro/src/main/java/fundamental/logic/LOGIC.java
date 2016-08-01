@@ -7,6 +7,6 @@ import fundamental.dto.EnterpriseFinanceDTO;
 import fundamental.dto.EpsDTO;
 
 public interface LOGIC {
-	public BpsDTO bps(EnterpriseFinanceDTO enterpriseFinance, int capitalstock);
-	public EpsDTO eps(EnterpriseFinanceDTO enterpriseFinance, int capitalStock);
+	public BpsDTO bps(EnterpriseFinanceDTO enterpriseFinance, int totalStock, String code);
+	public EpsDTO eps(EnterpriseFinanceDTO enterpriseFinance, int totalStock, String code);
 }
