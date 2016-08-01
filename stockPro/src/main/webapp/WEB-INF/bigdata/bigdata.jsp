@@ -109,10 +109,22 @@ var frequency_list = []
 								<div class="panel-body">
 									
 									<div class="radio">
-									
-										<label> <input type="radio" name="engine" id="a2"
-											value=1> 뉴스가 많이 나온
-										</label>
+										<c:choose>
+											<c:when test="${mode==1}">
+											
+										<label> <input type="radio" name="mode" id="a2"
+											value=1 >뉴스가 많이 나온</label>
+										<label> <input type="radio" name="mode" id="a2"
+											value=2 >산업</label>
+											</c:when>
+											<c:otherwise>
+											<label> <input type="radio" name="mode" id="a2"
+											value=1 > 뉴스가 많이 나온</label>
+										<label> <input type="radio" name="mode" id="a2"
+											value=2 >산업</label>
+											</c:otherwise>
+											</c:choose>
+											
 									</div>
 								
 								</div>
@@ -260,19 +272,50 @@ var frequency_list = []
 		<p>Footer Text</p>
 	</footer>
 <script type="text/javascript">
-var frequency_list = []
+var frequency_list1 = []
 		<c:forEach var="data" items="${topiclist}" varStatus="status">
 			var value =new Object();
 			value.text="${data['STOCKNAME']}"
 			value.weight=${data['NAMECOUNT']}
-			frequency_list.push(value)
+			frequency_list1.push(value)
 			
 		</c:forEach>
 			
+			 var frequency_list2 = []
+			<c:forEach var="data" items="${industrylist}" varStatus="status">
+				var value =new Object();
+				value.text="${data['INDUSTRYNAME']}"
+				value.weight=${data['NAMECOUNT']}
+				frequency_list2.push(value)
+				
+			</c:forEach>
+				 
+				
+				
 			
-			$(function() {
-			       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
-			       $("#div_cloud").jQCloud(frequency_list)});
+			$(document).ready(function(){
+				
+			$('input:radio[name=mode]').change(function(){
+				if(this.value==1){
+					$(function() {
+					       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+					     $('#div_cloud').jQCloud('destroy');
+					       $("#div_cloud").jQCloud(frequency_list1)});
+							
+								
+							
+				}else if(this.value==2){
+					$(function() {
+					       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+					       $('#div_cloud').jQCloud('destroy');
+					       $("#div_cloud").jQCloud(frequency_list2)});
+						
+							
+						
+				}
+			});
+			})
+			
 			    	   
  </script>
 

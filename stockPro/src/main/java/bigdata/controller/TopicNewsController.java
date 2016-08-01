@@ -23,13 +23,14 @@ public class TopicNewsController {
 		ModelAndView mav=new ModelAndView();
 		System.out.println("컨트롤러 동작");
 		List<BigdataDTO> topiclist=service.getTopicnews();
-	
+		List<BigdataDTO> industrylist=service.getIndustrynews();
 		for(int i=0;i<topiclist.size();i++){
 			System.out.println(topiclist.get(i));
 		
 		
 		}
 		mav.addObject("topiclist",topiclist);
+		mav.addObject("industrylist",industrylist);
 		mav.setViewName("bigdata");
 		return mav;
 		
