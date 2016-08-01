@@ -10,6 +10,13 @@
 
 	<definition name="index" extends="indexTemplate">
 	</definition>
+	<definition name="bigdata" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/bigdata/bigdata.jsp"/>
+	</definition>
+	
+	<definition name="industry" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/bigdata/industry.jsp"/>
+	</definition>
 	
 	<!-- <definition name="test" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/test/result.jsp"/>

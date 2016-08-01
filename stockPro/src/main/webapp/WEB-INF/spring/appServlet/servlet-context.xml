@@ -23,7 +23,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="bingdata" />
+	<context:component-scan base-package="bigdata" />
 	<context:component-scan base-package="fundamental" />
 	<context:component-scan base-package="technical" />
 	<context:component-scan base-package="stock" />

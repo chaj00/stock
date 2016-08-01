@@ -13,4 +13,12 @@
 		<mapper resource="mapper/ProductMapper.xml"/>
 		<mapper resource="mapper/ProductCommentMapper.xml"/>
 	</mappers> -->
+	
+	<typeAliases>
+		<typeAlias type="bigdata.dto.BigdataDTO" alias="bigdata"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/stockmapper.xml"/>
+	</mappers>
 </configuration>

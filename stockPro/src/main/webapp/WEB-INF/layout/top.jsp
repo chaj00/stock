@@ -22,7 +22,7 @@
 				 	<li class="divider-vertical"></li>
 					<li><a href="#">Technical</a></li>
 					<li class="divider-vertical"></li>
-					<li><a href="#">Bigdata</a></li>
+					<li><a href="/stock/bigdata.do">Bigdata</a></li>
 					<li class="divider-vertical"></li>
 					
 				</ul>
