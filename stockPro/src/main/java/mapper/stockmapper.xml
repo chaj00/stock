@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="stock.bigdata">
+	<select id="topicnews" resultType="HashMap" >
+		<!-- select * from hadoopTest2 -->
+		select distinct stockname, namecount from hadooptest2 order by namecount desc
+	</select>
+	
+	<select id="industrynews" resultType="HashMap" >
+		<!-- select * from hadoopTest2 -->
+		select distinct industryname, namecount from hadooptest3 order by namecount desc
+	</select>
+</mapper>
