@@ -10,7 +10,7 @@
 	</select>
 	
 	<select id="industrynews" resultType="HashMap" >
-		<!-- select * from hadoopTest2 -->
-		select distinct industryname, namecount from hadooptest3 order by namecount desc
+		 select * from hadoopTest3
+		<!--select distinct industryname, namecount from hadooptest3 order by namecount desc-->
 	</select>
 </mapper>

@@ -11,8 +11,27 @@
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <title>Bigdata</title>
-
-
+<link rel="stylesheet" type="text/css" href="../jqcloud/jqcloud.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+<script src="resources/jqcloud/jqcloud-1.0.4.js"></script>
+<link rel="stylesheet" href="resources/jqcloud/jqcloud.css">
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+var frequency_list = []
+		<c:forEach var="data" items="${industrylist}" varStatus="status">
+			var value =new Object();
+			value.text="${data['INDUSTRYNAME']}"
+			value.weight=${data['NAMECOUNT']}
+			frequency_list.push(value)
+			
+		</c:forEach>
+			
+			
+			$(function() {
+			       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+			       $("#div_cloud").jQCloud(frequency_list)});
+			    	   
+ </script>
 <style type="text/css">
 .fa {
 	display: inline-block;
@@ -58,6 +77,7 @@
 </style>
 </head>
 <body>
+
 	<div id="wrapper">
 
 
@@ -73,8 +93,11 @@
 		<div class="row">
 			<div id="cloud_container" class="col-lg-9"
 				style="text-align: center; max-height: 800px;">
-				<div id="div_cloud"
-					style="text-align: center; padding-bottom: 50px; max-height: 800px;"></div>
+				<!-- j3cloud div -->
+				<!-- <div id="div_cloud"
+					style="text-align: center; padding-bottom: 50px; max-height: 800px;"></div> -->
+					<!--  j3cloud div end -->
+					 <div id="div_cloud" style="width: 850px; height: 550px; border: 1px solid #ccc;"></div>
 			</div>
 
 			<div class="col-lg-3">
@@ -88,9 +111,6 @@
 									<div class="radio">
 										<label> <input type="radio" name="engine" id="a2"
 											value="topic"> 뉴스가 많이 나온
-										</label>
-										<label> <input type="radio" name="engine" id="a2"
-											value="industry"> 화재인 산업
 										</label>
 									</div>
 								
@@ -145,16 +165,18 @@
 	</div> --%>
 	
 
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(document).ready(function() {
 			$('input:radio').change(function() {
 
-				var url = 'http://localhost:8088/stock/industry.do';
+				var url = 'http://localhost:8088/stock/bigdata.do';
 				$(location).attr('href', url);
 
 			});
 
 		})
+		 -->
+		
 	</script>
 	<script>
 /* 	var jsonStr = 
@@ -164,14 +186,21 @@
 		</c:forEach>
 		document.write(jsonSTr) */
 		
-		var frequency_list = []
-		<c:forEach var="data" items="${industrylist}" varStatus="status">
+	/* 	var frequency_list = []
+		<c:forEach var="data" items="${topiclist}" varStatus="status">
 			var value =new Object();
-			value.text="${data['INDUSTRYNAME']}"
+			value.text="${data['STOCKNAME']}"
 			value.size="${data['NAMECOUNT']}"
 			frequency_list.push(value)
 		</c:forEach>
+			$(function() {
+			       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+			       $("#example").jQCloud(frequency_list);
+			     }); */
+			/////jqcloud start////
+	
 			
+		/////end jqcloud////	
 		//document.write(value.keys())
 		/* 
 		 JSONObject json = new JSONObject();
@@ -186,7 +215,9 @@
 	                      
 	                      ])
  */
-    var color = d3.scale.linear()
+ 
+ ///j3cloud start///
+    /* var color = d3.scale.linear()
             .domain([0,1,2,3,4,5,6,10,15,20,100])
             .range(["#eee", "#fff", "#ggg", "#hhh", "#222", "#333", "#444", "#555", "#666", "#777", "#888", "#999"]);
 
@@ -212,11 +243,13 @@
                 .enter().append("text")
                 .style("font-size", function(d) { return d.size + "px"; })
                 .style("fill", function(d, i) { return color(i); })
+                .style("color","blue") 
                 .attr("transform", function(d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
                 })
                 .text(function(d) { return d.text; });
-    }
+    } */
+    ///j3cloud end///
 </script>
 <span></span>
 
@@ -225,7 +258,6 @@
 <footer class="container-fluid text-center">
 		<p>Footer Text</p>
 	</footer>
-</div>
 
 
 </body>

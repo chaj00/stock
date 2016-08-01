@@ -24,6 +24,8 @@
 					<li class="divider-vertical"></li>
 					<li><a href="/stock/bigdata.do">Bigdata</a></li>
 					<li class="divider-vertical"></li>
+					<li><a href="/stock/industry.do">Test</a></li>
+					<li class="divider-vertical"></li>
 					
 				</ul>
 			
