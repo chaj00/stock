@@ -14,14 +14,14 @@ public class BigdataServiceImpl implements BigdataService{
 	@Qualifier("bigdatadao")
 	BigdataDAO dao;
 	@Override
-	public List<BigdataDTO> getTopicnews() {
+	public List<BigdataDTO> getTopicnews(String ndate) {
 		
-		return dao.getTopicnews();
+		return dao.getTopicnews(ndate);
 	}
 	@Override
-	public List<BigdataDTO> getIndustrynews() {
+	public List<BigdataDTO> getIndustrynews(String ndate) {
 		// TODO Auto-generated method stub
-		return dao.getIndustrynews();
+		return dao.getIndustrynews(ndate);
 	}
 	
 }

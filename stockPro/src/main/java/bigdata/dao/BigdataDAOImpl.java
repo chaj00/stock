@@ -13,16 +13,17 @@ public class BigdataDAOImpl implements BigdataDAO{
 	SqlSession sqlsession;
 
 	@Override
-	public List<BigdataDTO> getTopicnews() {
+	public List<BigdataDTO> getTopicnews(String ndate) {
 		
-		return sqlsession.selectList("stock.bigdata.topicnews");
+		return sqlsession.selectList("stock.bigdata.topicnews",ndate);
 		
 	}
 
 	@Override
-	public List<BigdataDTO> getIndustrynews() {
+	public List<BigdataDTO> getIndustrynews(String ndate) {
 		// TODO Auto-generated method stub
-		return sqlsession.selectList("stock.bigdata.industrynews");
+		System.out.println(ndate);
+		return sqlsession.selectList("stock.bigdata.industrynews",ndate);
 	}
 	
 

@@ -13,41 +13,15 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-   
-<script>
-	$(function(){
-		$("#datepicker").datepicker();
-	});
-</script>
-  
   <!-- end calendar -->
-
-
-
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <title>Bigdata</title>
 <link rel="stylesheet" type="text/css" href="../jqcloud/jqcloud.css" />
-<!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>-->
 <script src="resources/jqcloud/jqcloud-1.0.4.js"></script>
  <link rel="stylesheet" href="resources/jqcloud/jqcloud.css">
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans' rel='stylesheet' type='text/css'>
-<!-- <script type="text/javascript">
-var frequency_list = []
-		<c:forEach var="data" items="${topiclist}" varStatus="status">
-			var value =new Object();
-			value.text="${data['STOCKNAME']}"
-			value.weight=${data['NAMECOUNT']}
-			frequency_list.push(value)
-			
-		</c:forEach>
-			
-			
-			$(function() {
-			       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
-			       $("#div_cloud").jQCloud(frequency_list)});
-			    	   
- </script> -->
+
 <style type="text/css">
 .fa {
 	display: inline-block;
@@ -109,10 +83,7 @@ var frequency_list = []
 		<div class="row">
 			<div id="cloud_container" class="col-lg-9"
 				style="text-align: center; max-height: 800px;">
-				<!-- j3cloud div -->
-				<!-- <div id="div_cloud"
-					style="text-align: center; padding-bottom: 50px; max-height: 800px;"></div> -->
-					<!--  j3cloud div end -->
+			
 					 <div id="div_cloud" style="width: 850px; height: 550px; border: 1px solid #ccc;"></div>
 			</div>
 
@@ -132,6 +103,7 @@ var frequency_list = []
 											value=1 >뉴스가 많이 나온</label>
 										<label> <input type="radio" name="mode" id="a2"
 											value=2 >산업</label>
+											
 											</c:when>
 											<c:otherwise>
 											<label> <input type="radio" name="mode" id="a2"
@@ -148,8 +120,20 @@ var frequency_list = []
 						</div>
 						<!-- start calendar -->
 						<div>
-						<p>Date: <input type="text" id="datepicker"></p>
+						<script type:"txt/javascript">
+						$(function(){
+							$("#datepicker").datepicker({
+							dateFormat:'yy-mm-dd'
+							});
+							
+		
+						});
 						
+						
+						
+							
+						</script>
+						<p>Date: <input type="text" id="datepicker"></p>
 						
 						<!-- end calendar -->
 						</div>
@@ -160,39 +144,6 @@ var frequency_list = []
 			
 		</div>
 	</div>
-	<%-- <P>bigdata hello</P>
-	<div id="container" class="container">
-		<h1>
-			<strong>Bigdata</strong>
-		</h1>
-		
-		<div id="result_table" class="table-responsive">
-			<table class="table table-hover">
-				<tr class="info row">
-					<th class="col text-center">Stockname</th>
-					<th class="col text-center">Count</th>
-				</tr>
-				<thead>
-				<tbody>
-				
-					<c:forEach var="data" items="${topiclist}" varStatus="status">
-						<tr class="row">
-							
-							<td class="text-center">${data.stockName }</td>
-							<td class="text-center">${data.nameCount }</td>
-							
-						</tr>
-					</c:forEach> 
-
-				</tbody>
-			</table>
-		</div>
-	</div> --%>
-	
-
-	
-		
-
 
 
 
@@ -201,7 +152,9 @@ var frequency_list = []
 		<p>Footer Text</p>
 	</footer>
 <script type="text/javascript">
-var frequency_list1 = []
+
+
+	var frequency_list1 = []
 		<c:forEach var="data" items="${topiclist}" varStatus="status">
 			var value =new Object();
 			value.text="${data['STOCKNAME']}"
@@ -213,29 +166,35 @@ var frequency_list1 = []
 			 var frequency_list2 = []
 			<c:forEach var="data" items="${industrylist}" varStatus="status">
 				var value =new Object();
-				value.text="${data['INDUSTRYNAME']}"
-				value.weight=${data['NAMECOUNT']}
+				value.text="${data['NAME']}"
+				value.weight=${data['NCOUNT']}
 				frequency_list2.push(value)
 				
 			</c:forEach>
+				
+				
 				 
 				
 				
 			
 			$(document).ready(function(){
-				
 			$('input:radio[name=mode]').change(function(){
 				if(this.value==1){
+					
 					$(function() {
-					       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
-					     $('#div_cloud').empty();
-					       $("#div_cloud").jQCloud(frequency_list1)});
+						 
+						 $('#div_cloud').empty();
+						$("#div_cloud").jQCloud(frequency_list1);
+						 
+					    
+							 });
+					   
 							
 								
 							
 				}else if(this.value==2){
 					$(function() {
-					       // When DOM is ready, select the container element and call the jQCloud method, passing the array of words as the first argument.
+						
 					      $('#div_cloud').empty();
 					       $("#div_cloud").jQCloud(frequency_list2)});
 						
@@ -243,7 +202,16 @@ var frequency_list1 = []
 						
 				}
 			});
+			$('input:text').change(function(){
+				var calendar=document.getElementById('datepicker').value;
+				var url ='http://localhost:8088/stock/bigdata.do?ndate='+calendar;
+				$(location).attr('href',url);
+					
+			});
+			
+			
 			})
+		
 			
 			    	   
  </script>

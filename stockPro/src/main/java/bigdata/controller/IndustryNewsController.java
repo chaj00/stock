@@ -22,14 +22,14 @@ public class IndustryNewsController {
 	public ModelAndView topicnews(HttpServletRequest req){
 		ModelAndView mav=new ModelAndView();
 		System.out.println("컨트롤러 동작");
-		List<BigdataDTO> industrylist=service.getIndustrynews();
+		/*//List<BigdataDTO> industrylist=service.getIndustrynews();
 	
 		for(int i=0;i<industrylist.size();i++){
 			System.out.println(industrylist.get(i));
 		
 		
 		}
-		mav.addObject("industrylist",industrylist);
+		mav.addObject("industrylist",industrylist);*/
 		mav.setViewName("industry");
 		return mav;
 		

@@ -6,11 +6,12 @@
 <mapper namespace="stock.bigdata">
 	<select id="topicnews" resultType="HashMap" >
 		<!-- select * from hadoopTest2 -->
-		select distinct stockname, namecount from hadooptest2 order by namecount desc
+		select distinct stockname, namecount from hadoopTest2 order by namecount desc
 	</select>
 	
-	<select id="industrynews" resultType="HashMap" >
-		 select * from hadoopTest3
-		<!--select distinct industryname, namecount from hadooptest3 order by namecount desc-->
+	<select id="industrynews" resultType="HashMap" parameterType="String">
+		     select NAME, NCOUNT  from test where NDATE = #{ndate} order by ncount desc
+		   <!--select distinct industryname, namecount from hadoopTest3 order by namecount desc-->
+		
 	</select>
 </mapper>
