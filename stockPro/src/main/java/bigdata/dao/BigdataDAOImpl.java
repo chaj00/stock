@@ -25,6 +25,21 @@ public class BigdataDAOImpl implements BigdataDAO{
 		System.out.println(ndate);
 		return sqlsession.selectList("stock.bigdata.industrynews",ndate);
 	}
+
+	@Override
+	public List<BigdataDTO> getSmallnews(String ndate) {
+		return sqlsession.selectList("stock.bigdata.smallnews",ndate);
+	}
+
+	@Override
+	public List<BigdataDTO> getLargenews(String ndate) {
+		return sqlsession.selectList("stock.bigdata.largenews",ndate);
+	}
+
+	@Override
+	public List<BigdataDTO> getMediumnews(String ndate) {
+		return sqlsession.selectList("stock.bigdata.mediumnews",ndate);
+	}
 	
 
 }

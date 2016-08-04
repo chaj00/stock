@@ -5,12 +5,30 @@
 
 <mapper namespace="stock.bigdata">
 	<select id="topicnews" resultType="HashMap" >
-		<!-- select * from hadoopTest2 -->
-		select distinct stockname, namecount from hadoopTest2 order by namecount desc
+		<!-- select distinct stockname, namecount from corporation order by namecount desc -->
+		 select name, namecount  from corporation where cdate = #{ndate} order by namecount desc
 	</select>
 	
 	<select id="industrynews" resultType="HashMap" parameterType="String">
-		     select NAME, NCOUNT  from test where NDATE = #{ndate} order by ncount desc
+		    select name, namecount  from industry where idate = #{ndate} order by namecount desc
+		   <!--select distinct industryname, namecount from hadoopTest3 order by namecount desc-->
+		
+	</select>
+	
+	<select id="largenews" resultType="HashMap" parameterType="String">
+		   select name, namecount  from large where ldate = #{ndate} order by namecount desc
+		   <!--select distinct industryname, namecount from hadoopTest3 order by namecount desc-->
+		
+	</select>
+	
+	<select id="mediumnews" resultType="HashMap" parameterType="String">
+		    select name, namecount  from medium where mdate = #{ndate} order by namecount desc
+		   <!--select distinct industryname, namecount from hadoopTest3 order by namecount desc-->
+		
+	</select>
+	
+	<select id="smallnews" resultType="HashMap" parameterType="String">
+		     select name, namecount  from small where sdate = #{ndate} order by namecount desc
 		   <!--select distinct industryname, namecount from hadoopTest3 order by namecount desc-->
 		
 	</select>

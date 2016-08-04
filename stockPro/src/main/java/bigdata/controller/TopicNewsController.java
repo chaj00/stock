@@ -35,45 +35,28 @@ public class TopicNewsController {
 		ModelAndView mav = new ModelAndView();
 		List<BigdataDTO> topiclist;
 		List<BigdataDTO> industrylist;
+		List<BigdataDTO> largelist;
+		List<BigdataDTO> mediumlist;
+		List<BigdataDTO> smalllist;
+	
 		topiclist = service.getTopicnews(ndate);
 		industrylist = service.getIndustrynews(ndate);
+		largelist = service.getLargenews(ndate);
+		mediumlist = service.getMediumnews(ndate);
+		smalllist = service.getSmallnews(ndate);
+		
+		
 		mav.addObject("ndate", ndate);
 		mav.addObject("topiclist", topiclist);
 		mav.addObject("industrylist", industrylist);
-		for(int i=0;i<industrylist.size();i++){
-			System.out.println(industrylist.get(i));
-		}
-		return mav;
-		/*if (ndate == null) {
-			
-			SimpleDateFormat date1 = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
-			Date currentTime = new Date();
-			String dTime1 = date1.format(currentTime);
-			topiclist = service.getTopicnews(dTime1);
-			industrylist = service.getIndustrynews(dTime1);
-			mav1.addObject("ndate", dTime1);
-			mav1.addObject("topiclist", topiclist);
-			mav1.addObject("industrylist", industrylist);
-			mav1.setViewName("bigdata");
-			return mav1;
-			
-			
-		}else if(ndate !=null){
-			
-			topiclist = service.getTopicnews(ndate);
-			industrylist = service.getIndustrynews(ndate);
-			mav2.addObject("ndate", ndate);
-			mav2.addObject("topiclist", topiclist);
-			mav2.addObject("industrylist", industrylist);
-			for(int i=0;i<industrylist.size();i++){
-				System.out.println(industrylist.get(i));
-			}
-			mav2.setViewName("bigdata");
-			System.out.println("변수" + ndate);
-			System.out.println("변수크기" + ndate.length());
-			return mav2;
+		mav.addObject("largelist", largelist);
+		mav.addObject("mediumlist", mediumlist);
+		mav.addObject("smalllist", smalllist);
 		
+		/*for(int i=0;i<industrylist.size();i++){
+			System.out.println(industrylist.get(i));
 		}*/
+		return mav;
 		
 
 		

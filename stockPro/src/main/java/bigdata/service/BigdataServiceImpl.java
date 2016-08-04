@@ -23,5 +23,17 @@ public class BigdataServiceImpl implements BigdataService{
 		// TODO Auto-generated method stub
 		return dao.getIndustrynews(ndate);
 	}
+	@Override
+	public List<BigdataDTO> getSmallnews(String ndate) {
+		return dao.getSmallnews(ndate);
+	}
+	@Override
+	public List<BigdataDTO> getLargenews(String ndate) {
+		return dao.getLargenews(ndate);
+	}
+	@Override
+	public List<BigdataDTO> getMediumnews(String ndate) {
+		return dao.getMediumnews(ndate);
+	}
 	
 }
