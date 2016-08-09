@@ -10,35 +10,84 @@
 	
 	<definition name="index" extends="indexTemplate">
 	</definition>
+	
+
+<!-- fundamental start -->
 	<definition name="chart_per" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/fundamental/chart_per.jsp"/>
 	</definition>
 	<definition name="chart_pbr" extends="indexTemplate">
 		<put-attribute name="content" value="/WEB-INF/fundamental/chart_pbr.jsp"/>
 	</definition>
-	
-	
-	
-	
-<!-- 	<definition name="fundamental_layout" template="/WEB-INF/fundamental/fundamental_layout.jsp">
-		<put-attribute name="top" value="/WEB-INF/layout/top.jsp" />
-		<put-attribute name="fundamental_content1" value="/WEB-INF/fundamental/content1.jsp" />
-		<put-attribute name="fundamental_content2" value="/WEB-INF/fundamental/content2.jsp" />
-		<put-attribute name="fundamental_content3" value="/WEB-INF/fundamental/content3.jsp" />
-		<put-attribute name="fundamental_left" value="/WEB-INF/fundamental/left.jsp" />
+	<definition name="chart_pbr_layout" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_pbr_layout.jsp"/>
 	</definition>
-	<definition name="enterpriselist" extends="fundamental_layout">
-		<put-attribute name="fundamental_left" value="/WEB-INF/fundamental/enterpriselist.jsp" />
+	<definition name="chart_per_layout" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/chart_per_layout.jsp"/>
 	</definition>
-	<definition name="enterpriseinfo" extends="fundamental_layout">
-		<put-attribute name="fundamental_content1" value="/WEB-INF/fundamental/chart_per.jsp"/>
+<!--  -->
+	<definition name="check_pbrper_pbr" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbr.jsp"/>
 	</definition>
-	<definition name="chart_per" extends="fundamental_layout">
-		<put-attribute name="fundamental_content2" value="/WEB-INF/fundamental/chart_pbr.jsp"/>
+	<definition name="check_pbrper_pbr1" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr1.jsp"/>
 	</definition>
-	<definition name="chart_pbr" extends="fundamental_layout">
-		<put-attribute name="fundamental_content3" value="/WEB-INF/fundamental/enterpriseinfo.jsp"/>
-	</definition> -->
+	<definition name="check_pbrper_pbr2" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr2.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr3" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr3.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr4" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr4.jsp"/>
+	</definition>
+	<definition name="check_pbrper_pbr5" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_pbr5.jsp"/>
+	</definition>
+<!--  -->
+	<definition name="check_pbrper_per" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_per.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per1" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per1.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per2" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per2.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per3" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per3.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per4" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per4.jsp"/>
+	</definition>
+	<definition name="check_pbrper_per5" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/fundamental/check_pbrper_per5.jsp"/>
+	</definition>
 	
+	
+	
+	
+	
+<!-- technical start -->	
+	<definition name="goldencross" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/goldencross.jsp"/>
+	</definition>
+	<definition name="rsi" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/rsi.jsp"/>
+	</definition>
+	<definition name="stockChart" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/stockChart.jsp"/>
+	</definition>
+	<definition name="stockMultipleChart" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/technical/stockMultipleChart.jsp"/>
+	</definition>
+	
+<!-- bigdata start -->
+	<definition name="bigdata" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/bigdata/bigdata.jsp"/>
+	</definition>
+	<definition name="industry" extends="indexTemplate">
+		<put-attribute name="content" value="/WEB-INF/bigdata/industry.jsp"/>
+	</definition>
 
 </tiles-definitions>

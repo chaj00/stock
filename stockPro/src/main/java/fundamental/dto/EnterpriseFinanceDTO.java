@@ -18,6 +18,8 @@ public class EnterpriseFinanceDTO {
 	int profit_17y;
 	int profit_18y;
 	int profit_19y;
+	int profit_20y;
+	
 	
 	int asset_05y;
 	int asset_06y;
@@ -34,17 +36,19 @@ public class EnterpriseFinanceDTO {
 	int asset_17y;
 	int asset_18y;
 	int asset_19y;
+	int asset_20y;
 	
 	
 	public EnterpriseFinanceDTO(){
 	}
 
 
-	public EnterpriseFinanceDTO(String code, int profit_05y, int profit_06y, int profit_07y, int profit_08y, int profit_09y,
-			int profit_10y, int profit_11y, int profit_12y, int profit_13y, int profit_14y, int profit_15y,
-			int profit_16y, int profit_17y, int profit_18y, int profit_19y, int asset_05y, int asset_06y, int asset_07y,
-			int asset_08y, int asset_09y, int asset_10y, int asset_11y, int asset_12y, int asset_13y, int asset_14y,
-			int asset_15y, int asset_16y, int asset_17y, int asset_18y, int asset_19y) {
+	public EnterpriseFinanceDTO(String code, int profit_05y, int profit_06y, int profit_07y, int profit_08y,
+			int profit_09y, int profit_10y, int profit_11y, int profit_12y, int profit_13y, int profit_14y,
+			int profit_15y, int profit_16y, int profit_17y, int profit_18y, int profit_19y, int profit_20y,
+			int asset_05y, int asset_06y, int asset_07y, int asset_08y, int asset_09y, int asset_10y, int asset_11y,
+			int asset_12y, int asset_13y, int asset_14y, int asset_15y, int asset_16y, int asset_17y, int asset_18y,
+			int asset_19y, int asset_20y) {
 		super();
 		this.code = code;
 		this.profit_05y = profit_05y;
@@ -62,6 +66,7 @@ public class EnterpriseFinanceDTO {
 		this.profit_17y = profit_17y;
 		this.profit_18y = profit_18y;
 		this.profit_19y = profit_19y;
+		this.profit_20y = profit_20y;
 		this.asset_05y = asset_05y;
 		this.asset_06y = asset_06y;
 		this.asset_07y = asset_07y;
@@ -77,21 +82,23 @@ public class EnterpriseFinanceDTO {
 		this.asset_17y = asset_17y;
 		this.asset_18y = asset_18y;
 		this.asset_19y = asset_19y;
+		this.asset_20y = asset_20y;
 	}
 
 
 	@Override
 	public String toString() {
-		return "EntFinanceDTO [code=" + code + ", profit_05y=" + profit_05y + ", profit_06y=" + profit_06y
+		return "EnterpriseFinanceDTO [code=" + code + ", profit_05y=" + profit_05y + ", profit_06y=" + profit_06y
 				+ ", profit_07y=" + profit_07y + ", profit_08y=" + profit_08y + ", profit_09y=" + profit_09y
 				+ ", profit_10y=" + profit_10y + ", profit_11y=" + profit_11y + ", profit_12y=" + profit_12y
 				+ ", profit_13y=" + profit_13y + ", profit_14y=" + profit_14y + ", profit_15y=" + profit_15y
 				+ ", profit_16y=" + profit_16y + ", profit_17y=" + profit_17y + ", profit_18y=" + profit_18y
-				+ ", profit_19y=" + profit_19y + ", asset_05y=" + asset_05y + ", asset_06y=" + asset_06y
-				+ ", asset_07y=" + asset_07y + ", asset_08y=" + asset_08y + ", asset_09y=" + asset_09y + ", asset_10y="
-				+ asset_10y + ", asset_11y=" + asset_11y + ", asset_12y=" + asset_12y + ", asset_13y=" + asset_13y
-				+ ", asset_14y=" + asset_14y + ", asset_15y=" + asset_15y + ", asset_16y=" + asset_16y + ", asset_17y="
-				+ asset_17y + ", asset_18y=" + asset_18y + ", asset_19y=" + asset_19y + "]";
+				+ ", profit_19y=" + profit_19y + ", profit_20y=" + profit_20y + ", asset_05y=" + asset_05y
+				+ ", asset_06y=" + asset_06y + ", asset_07y=" + asset_07y + ", asset_08y=" + asset_08y + ", asset_09y="
+				+ asset_09y + ", asset_10y=" + asset_10y + ", asset_11y=" + asset_11y + ", asset_12y=" + asset_12y
+				+ ", asset_13y=" + asset_13y + ", asset_14y=" + asset_14y + ", asset_15y=" + asset_15y + ", asset_16y="
+				+ asset_16y + ", asset_17y=" + asset_17y + ", asset_18y=" + asset_18y + ", asset_19y=" + asset_19y
+				+ ", asset_20y=" + asset_20y + "]";
 	}
 
 
@@ -255,6 +262,16 @@ public class EnterpriseFinanceDTO {
 	}
 
 
+	public int getProfit_20y() {
+		return profit_20y;
+	}
+
+
+	public void setProfit_20y(int profit_20y) {
+		this.profit_20y = profit_20y;
+	}
+
+
 	public int getAsset_05y() {
 		return asset_05y;
 	}
@@ -403,6 +420,17 @@ public class EnterpriseFinanceDTO {
 	public void setAsset_19y(int asset_19y) {
 		this.asset_19y = asset_19y;
 	}
+
+
+	public int getAsset_20y() {
+		return asset_20y;
+	}
+
+
+	public void setAsset_20y(int asset_20y) {
+		this.asset_20y = asset_20y;
+	}
+
 	
 	
 	

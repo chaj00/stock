@@ -5,13 +5,28 @@
 <configuration>
 
 	<typeAliases>
+	<!-- fundamental -->
 		<typeAlias type="fundamental.dto.BpsDTO" alias="BpsDTO"/>
 		<typeAlias type="fundamental.dto.EpsDTO" alias="EpsDTO"/>
 		<typeAlias type="fundamental.dto.EnterpriseFinanceDTO" alias="EnterpriseFinanceDTO"/>
 		<typeAlias type="fundamental.dto.EnterpriseTotalDTO" alias="EnterpriseTotalDTO"/>
 		<typeAlias type="fundamental.dto.StockCloseWDTO" alias="StockCloseWDTO"/>
+		<typeAlias type="fundamental.dto.CheckDTO" alias="CheckDTO"/>
+	<!-- technical -->
+		<typeAlias type="technical.dto.StockDInfoDTO" alias="stockdinfo"/>
+	<!-- bigdata -->
+		<typeAlias type="bigdata.dto.BigdataDTO" alias="bigdata"/>
+	
+	
 	</typeAliases>
 	<mappers>
+	<!-- fundamental -->
 		<mapper resource="mapper/FundamentalMapper.xml"/>
+	<!-- technical -->
+		<mapper resource="mapper/StockDMapper.xml"/>
+	<!-- bigdata -->
+		<mapper resource="mapper/stockmapper.xml"/>
 	</mappers>
+	
+	
 </configuration>

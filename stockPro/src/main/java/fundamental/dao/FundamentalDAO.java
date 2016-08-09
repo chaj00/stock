@@ -2,6 +2,7 @@ package fundamental.dao;
 
 import java.util.List;
 
+import fundamental.dto.CheckDTO;
 import fundamental.dto.EnterpriseFinanceDTO;
 import fundamental.dto.EnterpriseTotalDTO;
 import fundamental.dto.StockCloseWDTO;
@@ -21,6 +22,11 @@ public interface FundamentalDAO {
 	
 	//종가 리스트
 	List<StockCloseWDTO> closeList(String code);
+	
+//------Check page
+	List<StockCloseWDTO> stockCloseCheck();
+	List<CheckDTO> closeCheck();
+//	List<EnterpriseFinanceDTO> enterpriseFinanceCheck();
 }
 
 

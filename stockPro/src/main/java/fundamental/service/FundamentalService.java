@@ -3,6 +3,7 @@ package fundamental.service;
 import java.util.List;
 
 import fundamental.dto.BpsDTO;
+import fundamental.dto.CheckDTO;
 import fundamental.dto.EnterpriseFinanceDTO;
 import fundamental.dto.EnterpriseTotalDTO;
 import fundamental.dto.EpsDTO;
@@ -26,9 +27,15 @@ public interface FundamentalService {
 	 
 	//기업정보 - EPS
 	EpsDTO eps(EnterpriseFinanceDTO EnterpriseFinance, int totalStock, String code);
-	 
+	
+//----------Check page	
+	//종가, bps, eps 종목명 종목코드
+	List<StockCloseWDTO> stockCloseCheck();
+	List<CheckDTO> closeCheck();
+//	List<EnterpriseFinanceDTO> enterpriseFinanceCheck(List<EnterpriseTotalDTO> codeList);
+//	List<BpsDTO> bpsCheck(List<EnterpriseTotalDTO> codeList);
+//	List<EpsDTO> epsCheck(List<EnterpriseTotalDTO> codeList);
+	
+	
+	
 }
-
-
-
-

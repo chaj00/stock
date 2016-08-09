@@ -10,101 +10,123 @@ public class BpsDTO {
 	int bps06y2; //BPS
 	int bps06y3; //BPS
 	int bps06y4; //BPS
-
+	int bps06y_04;
+	int bps06y_06;
+	int bps06y_08;
+	
+	
 	int bps07y; //BPS
 	int bps07y2; //BPS
 	int bps07y3; //BPS
 	int bps07y4; //BPS
+	int bps07y_04;
+	int bps07y_06;
+	int bps07y_08;
 	
 	int bps08y; //BPS
 	int bps08y2; //BPS
 	int bps08y3; //BPS
 	int bps08y4; //BPS
+	int bps08y_04;
+	int bps08y_06;
+	int bps08y_08;
 	
 	int bps09y; //BPS
 	int bps09y2; //BPS
 	int bps09y3; //BPS
 	int bps09y4; //BPS
-	
+	int bps09y_04;
+	int bps09y_06;
+	int bps09y_08;
+
 	int bps10y; //BPS
 	int bps10y2; //BPS
 	int bps10y3; //BPS
 	int bps10y4; //BPS
+	int bps10y_04;
+	int bps10y_06;
+	int bps10y_08;
 	
 	int bps11y; //BPS
 	int bps11y2; //BPS
 	int bps11y3; //BPS
 	int bps11y4; //BPS
+	int bps11y_04;
+	int bps11y_06;
+	int bps11y_08;
 	
 	int bps12y; //BPS
 	int bps12y2; //BPS
 	int bps12y3; //BPS
 	int bps12y4; //BPS
-	
+	int bps12y_04;
+	int bps12y_06;
+	int bps12y_08;
+
 	int bps13y; //BPS
 	int bps13y2; //BPS
 	int bps13y3; //BPS
 	int bps13y4; //BPS
-	
+	int bps13y_04;
+	int bps13y_06;
+	int bps13y_08;
+
 	int bps14y; //BPS
 	int bps14y2; //BPS
 	int bps14y3; //BPS
 	int bps14y4; //BPS
-	
+	int bps14y_04;
+	int bps14y_06;
+	int bps14y_08;
+
 	int bps15y; //BPS
 	int bps15y2; //BPS
 	int bps15y3; //BPS
 	int bps15y4; //BPS
+	int bps15y_04;
+	int bps15y_06;
+	int bps15y_08;
 	
 	int bps16y; //BPS
 	int bps16y2; //BPS
 	int bps16y3; //BPS
 	int bps16y4; //BPS
+	int bps16y_04;
+	int bps16y_06;
+	int bps16y_08;
 	
 	int bps17y; //BPS
 	int bps17y2; //BPS
 	int bps17y3; //BPS
 	int bps17y4; //BPS
+	int bps17y_04;
+	int bps17y_06;
+	int bps17y_08;
 	
 	int bps18y; //BPS
 	int bps18y2; //BPS
 	int bps18y3; //BPS
 	int bps18y4; //BPS
+	int bps18y_04;
+	int bps18y_06;
+	int bps18y_08;
 	
 	int bps19y; //BPS
 	int bps19y2; //BPS
 	int bps19y3; //BPS
 	int bps19y4; //BPS
+	int bps19y_04;
+	int bps19y_06;
+	int bps19y_08;
 	
-	//pbrband차트 데이터(`07~`16)
-	int pbr_07y;
-	int pbr_08y;
-	int pbr_09y;
-	int pbr_10y;
-	int pbr_11y;
-	int pbr_12y;
-	int pbr_13y;
-	int pbr_14y;
-	int pbr_15y;
-	int pbr_16y;
-	int pbr_17y;
-	int pbr_18y;
-	int pbr_19y;
+	int bps20y; //BPS
+	int bps20y2; //BPS
+	int bps20y3; //BPS
+	int bps20y4; //BPS
+	int bps20y_04;
+	int bps20y_06;
+	int bps20y_08;
 	
-	//perband차트 데이터(`07~`16)
-	int per_07y;
-	int per_08y;
-	int per_09y;
-	int per_10y;
-	int per_11y;
-	int per_12y;
-	int per_13y;
-	int per_14y;
-	int per_15y;
-	int per_16y;
-	int per_17y;
-	int per_18y;
-	int per_19y;
 	
 	
 	public BpsDTO(){
@@ -112,20 +134,23 @@ public class BpsDTO {
 	}
 
 
-	public BpsDTO(int yearCount, String code, int bps06y, int bps06y2, int bps06y3, int bps06y4,
-			int bps07y, int bps07y2, int bps07y3, int bps07y4, int bps08y, int bps08y2,
-			int bps08y3, int bps08y4, int bps09y, int bps09y2, int bps09y3, int bps09y4,
-			int bps10y, int bps10y2, int bps10y3, int bps10y4, int bps11y, int bps11y2,
-			int bps11y3, int bps11y4, int bps12y, int bps12y2, int bps12y3, int bps12y4,
-			int bps13y, int bps13y2, int bps13y3, int bps13y4, int bps14y, int bps14y2,
-			int bps14y3, int bps14y4, int bps15y, int bps15y2, int bps15y3, int bps15y4,
-			int bps16y, int bps16y2, int bps16y3, int bps16y4, int bps17y, int bps17y2,
-			int bps17y3, int bps17y4, int bps18y, int bps18y2, int bps18y3, int bps18y4,
-			int bps19y, int bps19y2, int bps19y3, int bps19y4, int pbr_07y, int pbr_08y,
-			int pbr_09y, int pbr_10y, int pbr_11y, int pbr_12y, int pbr_13y, int pbr_14y,
-			int pbr_15y, int pbr_16y, int pbr_17y, int pbr_18y, int pbr_19y, int per_07y,
-			int per_08y, int per_09y, int per_10y, int per_11y, int per_12y, int per_13y,
-			int per_14y, int per_15y, int per_16y, int per_17y, int per_18y, int per_19y) {
+
+	public BpsDTO(int yearCount, String code, int bps06y, int bps06y2, int bps06y3, int bps06y4, int bps06y_04,
+			int bps06y_06, int bps06y_08, int bps07y, int bps07y2, int bps07y3, int bps07y4, int bps07y_04,
+			int bps07y_06, int bps07y_08, int bps08y, int bps08y2, int bps08y3, int bps08y4, int bps08y_04,
+			int bps08y_06, int bps08y_08, int bps09y, int bps09y2, int bps09y3, int bps09y4, int bps09y_04,
+			int bps09y_06, int bps09y_08, int bps10y, int bps10y2, int bps10y3, int bps10y4, int bps10y_04,
+			int bps10y_06, int bps10y_08, int bps11y, int bps11y2, int bps11y3, int bps11y4, int bps11y_04,
+			int bps11y_06, int bps11y_08, int bps12y, int bps12y2, int bps12y3, int bps12y4, int bps12y_04,
+			int bps12y_06, int bps12y_08, int bps13y, int bps13y2, int bps13y3, int bps13y4, int bps13y_04,
+			int bps13y_06, int bps13y_08, int bps14y, int bps14y2, int bps14y3, int bps14y4, int bps14y_04,
+			int bps14y_06, int bps14y_08, int bps15y, int bps15y2, int bps15y3, int bps15y4, int bps15y_04,
+			int bps15y_06, int bps15y_08, int bps16y, int bps16y2, int bps16y3, int bps16y4, int bps16y_04,
+			int bps16y_06, int bps16y_08, int bps17y, int bps17y2, int bps17y3, int bps17y4, int bps17y_04,
+			int bps17y_06, int bps17y_08, int bps18y, int bps18y2, int bps18y3, int bps18y4, int bps18y_04,
+			int bps18y_06, int bps18y_08, int bps19y, int bps19y2, int bps19y3, int bps19y4, int bps19y_04,
+			int bps19y_06, int bps19y_08, int bps20y, int bps20y2, int bps20y3, int bps20y4, int bps20y_04,
+			int bps20y_06, int bps20y_08) {
 		super();
 		this.yearCount = yearCount;
 		this.code = code;
@@ -133,112 +158,145 @@ public class BpsDTO {
 		this.bps06y2 = bps06y2;
 		this.bps06y3 = bps06y3;
 		this.bps06y4 = bps06y4;
+		this.bps06y_04 = bps06y_04;
+		this.bps06y_06 = bps06y_06;
+		this.bps06y_08 = bps06y_08;
 		this.bps07y = bps07y;
 		this.bps07y2 = bps07y2;
 		this.bps07y3 = bps07y3;
 		this.bps07y4 = bps07y4;
+		this.bps07y_04 = bps07y_04;
+		this.bps07y_06 = bps07y_06;
+		this.bps07y_08 = bps07y_08;
 		this.bps08y = bps08y;
 		this.bps08y2 = bps08y2;
 		this.bps08y3 = bps08y3;
 		this.bps08y4 = bps08y4;
+		this.bps08y_04 = bps08y_04;
+		this.bps08y_06 = bps08y_06;
+		this.bps08y_08 = bps08y_08;
 		this.bps09y = bps09y;
 		this.bps09y2 = bps09y2;
 		this.bps09y3 = bps09y3;
 		this.bps09y4 = bps09y4;
+		this.bps09y_04 = bps09y_04;
+		this.bps09y_06 = bps09y_06;
+		this.bps09y_08 = bps09y_08;
 		this.bps10y = bps10y;
 		this.bps10y2 = bps10y2;
 		this.bps10y3 = bps10y3;
 		this.bps10y4 = bps10y4;
+		this.bps10y_04 = bps10y_04;
+		this.bps10y_06 = bps10y_06;
+		this.bps10y_08 = bps10y_08;
 		this.bps11y = bps11y;
 		this.bps11y2 = bps11y2;
 		this.bps11y3 = bps11y3;
 		this.bps11y4 = bps11y4;
+		this.bps11y_04 = bps11y_04;
+		this.bps11y_06 = bps11y_06;
+		this.bps11y_08 = bps11y_08;
 		this.bps12y = bps12y;
 		this.bps12y2 = bps12y2;
 		this.bps12y3 = bps12y3;
 		this.bps12y4 = bps12y4;
+		this.bps12y_04 = bps12y_04;
+		this.bps12y_06 = bps12y_06;
+		this.bps12y_08 = bps12y_08;
 		this.bps13y = bps13y;
 		this.bps13y2 = bps13y2;
 		this.bps13y3 = bps13y3;
 		this.bps13y4 = bps13y4;
+		this.bps13y_04 = bps13y_04;
+		this.bps13y_06 = bps13y_06;
+		this.bps13y_08 = bps13y_08;
 		this.bps14y = bps14y;
 		this.bps14y2 = bps14y2;
 		this.bps14y3 = bps14y3;
 		this.bps14y4 = bps14y4;
+		this.bps14y_04 = bps14y_04;
+		this.bps14y_06 = bps14y_06;
+		this.bps14y_08 = bps14y_08;
 		this.bps15y = bps15y;
 		this.bps15y2 = bps15y2;
 		this.bps15y3 = bps15y3;
 		this.bps15y4 = bps15y4;
+		this.bps15y_04 = bps15y_04;
+		this.bps15y_06 = bps15y_06;
+		this.bps15y_08 = bps15y_08;
 		this.bps16y = bps16y;
 		this.bps16y2 = bps16y2;
 		this.bps16y3 = bps16y3;
 		this.bps16y4 = bps16y4;
+		this.bps16y_04 = bps16y_04;
+		this.bps16y_06 = bps16y_06;
+		this.bps16y_08 = bps16y_08;
 		this.bps17y = bps17y;
 		this.bps17y2 = bps17y2;
 		this.bps17y3 = bps17y3;
 		this.bps17y4 = bps17y4;
+		this.bps17y_04 = bps17y_04;
+		this.bps17y_06 = bps17y_06;
+		this.bps17y_08 = bps17y_08;
 		this.bps18y = bps18y;
 		this.bps18y2 = bps18y2;
 		this.bps18y3 = bps18y3;
 		this.bps18y4 = bps18y4;
+		this.bps18y_04 = bps18y_04;
+		this.bps18y_06 = bps18y_06;
+		this.bps18y_08 = bps18y_08;
 		this.bps19y = bps19y;
 		this.bps19y2 = bps19y2;
 		this.bps19y3 = bps19y3;
 		this.bps19y4 = bps19y4;
-		this.pbr_07y = pbr_07y;
-		this.pbr_08y = pbr_08y;
-		this.pbr_09y = pbr_09y;
-		this.pbr_10y = pbr_10y;
-		this.pbr_11y = pbr_11y;
-		this.pbr_12y = pbr_12y;
-		this.pbr_13y = pbr_13y;
-		this.pbr_14y = pbr_14y;
-		this.pbr_15y = pbr_15y;
-		this.pbr_16y = pbr_16y;
-		this.pbr_17y = pbr_17y;
-		this.pbr_18y = pbr_18y;
-		this.pbr_19y = pbr_19y;
-		this.per_07y = per_07y;
-		this.per_08y = per_08y;
-		this.per_09y = per_09y;
-		this.per_10y = per_10y;
-		this.per_11y = per_11y;
-		this.per_12y = per_12y;
-		this.per_13y = per_13y;
-		this.per_14y = per_14y;
-		this.per_15y = per_15y;
-		this.per_16y = per_16y;
-		this.per_17y = per_17y;
-		this.per_18y = per_18y;
-		this.per_19y = per_19y;
+		this.bps19y_04 = bps19y_04;
+		this.bps19y_06 = bps19y_06;
+		this.bps19y_08 = bps19y_08;
+		this.bps20y = bps20y;
+		this.bps20y2 = bps20y2;
+		this.bps20y3 = bps20y3;
+		this.bps20y4 = bps20y4;
+		this.bps20y_04 = bps20y_04;
+		this.bps20y_06 = bps20y_06;
+		this.bps20y_08 = bps20y_08;
 	}
+
 
 
 	@Override
 	public String toString() {
 		return "BpsDTO [yearCount=" + yearCount + ", code=" + code + ", bps06y=" + bps06y + ", bps06y2=" + bps06y2
-				+ ", bps06y3=" + bps06y3 + ", bps06y4=" + bps06y4 + ", bps07y=" + bps07y + ", bps07y2=" + bps07y2
-				+ ", bps07y3=" + bps07y3 + ", bps07y4=" + bps07y4 + ", bps08y=" + bps08y + ", bps08y2=" + bps08y2
-				+ ", bps08y3=" + bps08y3 + ", bps08y4=" + bps08y4 + ", bps09y=" + bps09y + ", bps09y2=" + bps09y2
-				+ ", bps09y3=" + bps09y3 + ", bps09y4=" + bps09y4 + ", bps10y=" + bps10y + ", bps10y2=" + bps10y2
-				+ ", bps10y3=" + bps10y3 + ", bps10y4=" + bps10y4 + ", bps11y=" + bps11y + ", bps11y2=" + bps11y2
-				+ ", bps11y3=" + bps11y3 + ", bps11y4=" + bps11y4 + ", bps12y=" + bps12y + ", bps12y2=" + bps12y2
-				+ ", bps12y3=" + bps12y3 + ", bps12y4=" + bps12y4 + ", bps13y=" + bps13y + ", bps13y2=" + bps13y2
-				+ ", bps13y3=" + bps13y3 + ", bps13y4=" + bps13y4 + ", bps14y=" + bps14y + ", bps14y2=" + bps14y2
-				+ ", bps14y3=" + bps14y3 + ", bps14y4=" + bps14y4 + ", bps15y=" + bps15y + ", bps15y2=" + bps15y2
-				+ ", bps15y3=" + bps15y3 + ", bps15y4=" + bps15y4 + ", bps16y=" + bps16y + ", bps16y2=" + bps16y2
-				+ ", bps16y3=" + bps16y3 + ", bps16y4=" + bps16y4 + ", bps17y=" + bps17y + ", bps17y2=" + bps17y2
-				+ ", bps17y3=" + bps17y3 + ", bps17y4=" + bps17y4 + ", bps18y=" + bps18y + ", bps18y2=" + bps18y2
-				+ ", bps18y3=" + bps18y3 + ", bps18y4=" + bps18y4 + ", bps19y=" + bps19y + ", bps19y2=" + bps19y2
-				+ ", bps19y3=" + bps19y3 + ", bps19y4=" + bps19y4 + ", pbr_07y=" + pbr_07y + ", pbr_08y=" + pbr_08y
-				+ ", pbr_09y=" + pbr_09y + ", pbr_10y=" + pbr_10y + ", pbr_11y=" + pbr_11y + ", pbr_12y=" + pbr_12y
-				+ ", pbr_13y=" + pbr_13y + ", pbr_14y=" + pbr_14y + ", pbr_15y=" + pbr_15y + ", pbr_16y=" + pbr_16y
-				+ ", pbr_17y=" + pbr_17y + ", pbr_18y=" + pbr_18y + ", pbr_19y=" + pbr_19y + ", per_07y=" + per_07y
-				+ ", per_08y=" + per_08y + ", per_09y=" + per_09y + ", per_10y=" + per_10y + ", per_11y=" + per_11y
-				+ ", per_12y=" + per_12y + ", per_13y=" + per_13y + ", per_14y=" + per_14y + ", per_15y=" + per_15y
-				+ ", per_16y=" + per_16y + ", per_17y=" + per_17y + ", per_18y=" + per_18y + ", per_19y=" + per_19y
-				+ "]";
+				+ ", bps06y3=" + bps06y3 + ", bps06y4=" + bps06y4 + ", bps06y_04=" + bps06y_04 + ", bps06y_06="
+				+ bps06y_06 + ", bps06y_08=" + bps06y_08 + ", bps07y=" + bps07y + ", bps07y2=" + bps07y2 + ", bps07y3="
+				+ bps07y3 + ", bps07y4=" + bps07y4 + ", bps07y_04=" + bps07y_04 + ", bps07y_06=" + bps07y_06
+				+ ", bps07y_08=" + bps07y_08 + ", bps08y=" + bps08y + ", bps08y2=" + bps08y2 + ", bps08y3=" + bps08y3
+				+ ", bps08y4=" + bps08y4 + ", bps08y_04=" + bps08y_04 + ", bps08y_06=" + bps08y_06 + ", bps08y_08="
+				+ bps08y_08 + ", bps09y=" + bps09y + ", bps09y2=" + bps09y2 + ", bps09y3=" + bps09y3 + ", bps09y4="
+				+ bps09y4 + ", bps09y_04=" + bps09y_04 + ", bps09y_06=" + bps09y_06 + ", bps09y_08=" + bps09y_08
+				+ ", bps10y=" + bps10y + ", bps10y2=" + bps10y2 + ", bps10y3=" + bps10y3 + ", bps10y4=" + bps10y4
+				+ ", bps10y_04=" + bps10y_04 + ", bps10y_06=" + bps10y_06 + ", bps10y_08=" + bps10y_08 + ", bps11y="
+				+ bps11y + ", bps11y2=" + bps11y2 + ", bps11y3=" + bps11y3 + ", bps11y4=" + bps11y4 + ", bps11y_04="
+				+ bps11y_04 + ", bps11y_06=" + bps11y_06 + ", bps11y_08=" + bps11y_08 + ", bps12y=" + bps12y
+				+ ", bps12y2=" + bps12y2 + ", bps12y3=" + bps12y3 + ", bps12y4=" + bps12y4 + ", bps12y_04=" + bps12y_04
+				+ ", bps12y_06=" + bps12y_06 + ", bps12y_08=" + bps12y_08 + ", bps13y=" + bps13y + ", bps13y2="
+				+ bps13y2 + ", bps13y3=" + bps13y3 + ", bps13y4=" + bps13y4 + ", bps13y_04=" + bps13y_04
+				+ ", bps13y_06=" + bps13y_06 + ", bps13y_08=" + bps13y_08 + ", bps14y=" + bps14y + ", bps14y2="
+				+ bps14y2 + ", bps14y3=" + bps14y3 + ", bps14y4=" + bps14y4 + ", bps14y_04=" + bps14y_04
+				+ ", bps14y_06=" + bps14y_06 + ", bps14y_08=" + bps14y_08 + ", bps15y=" + bps15y + ", bps15y2="
+				+ bps15y2 + ", bps15y3=" + bps15y3 + ", bps15y4=" + bps15y4 + ", bps15y_04=" + bps15y_04
+				+ ", bps15y_06=" + bps15y_06 + ", bps15y_08=" + bps15y_08 + ", bps16y=" + bps16y + ", bps16y2="
+				+ bps16y2 + ", bps16y3=" + bps16y3 + ", bps16y4=" + bps16y4 + ", bps16y_04=" + bps16y_04
+				+ ", bps16y_06=" + bps16y_06 + ", bps16y_08=" + bps16y_08 + ", bps17y=" + bps17y + ", bps17y2="
+				+ bps17y2 + ", bps17y3=" + bps17y3 + ", bps17y4=" + bps17y4 + ", bps17y_04=" + bps17y_04
+				+ ", bps17y_06=" + bps17y_06 + ", bps17y_08=" + bps17y_08 + ", bps18y=" + bps18y + ", bps18y2="
+				+ bps18y2 + ", bps18y3=" + bps18y3 + ", bps18y4=" + bps18y4 + ", bps18y_04=" + bps18y_04
+				+ ", bps18y_06=" + bps18y_06 + ", bps18y_08=" + bps18y_08 + ", bps19y=" + bps19y + ", bps19y2="
+				+ bps19y2 + ", bps19y3=" + bps19y3 + ", bps19y4=" + bps19y4 + ", bps19y_04=" + bps19y_04
+				+ ", bps19y_06=" + bps19y_06 + ", bps19y_08=" + bps19y_08 + ", bps20y=" + bps20y + ", bps20y2="
+				+ bps20y2 + ", bps20y3=" + bps20y3 + ", bps20y4=" + bps20y4 + ", bps20y_04=" + bps20y_04
+				+ ", bps20y_06=" + bps20y_06 + ", bps20y_08=" + bps20y_08 + "]";
 	}
+
 
 
 	public int getYearCount() {
@@ -246,9 +304,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setYearCount(int yearCount) {
 		this.yearCount = yearCount;
 	}
+
 
 
 	public String getCode() {
@@ -256,9 +316,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setCode(String code) {
 		this.code = code;
 	}
+
 
 
 	public int getBps06y() {
@@ -266,9 +328,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps06y(int bps06y) {
 		this.bps06y = bps06y;
 	}
+
 
 
 	public int getBps06y2() {
@@ -276,9 +340,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps06y2(int bps06y2) {
 		this.bps06y2 = bps06y2;
 	}
+
 
 
 	public int getBps06y3() {
@@ -286,9 +352,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps06y3(int bps06y3) {
 		this.bps06y3 = bps06y3;
 	}
+
 
 
 	public int getBps06y4() {
@@ -296,9 +364,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps06y4(int bps06y4) {
 		this.bps06y4 = bps06y4;
 	}
+
+
+
+	public int getBps06y_04() {
+		return bps06y_04;
+	}
+
+
+
+	public void setBps06y_04(int bps06y_04) {
+		this.bps06y_04 = bps06y_04;
+	}
+
+
+
+	public int getBps06y_06() {
+		return bps06y_06;
+	}
+
+
+
+	public void setBps06y_06(int bps06y_06) {
+		this.bps06y_06 = bps06y_06;
+	}
+
+
+
+	public int getBps06y_08() {
+		return bps06y_08;
+	}
+
+
+
+	public void setBps06y_08(int bps06y_08) {
+		this.bps06y_08 = bps06y_08;
+	}
+
 
 
 	public int getBps07y() {
@@ -306,9 +412,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps07y(int bps07y) {
 		this.bps07y = bps07y;
 	}
+
 
 
 	public int getBps07y2() {
@@ -316,9 +424,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps07y2(int bps07y2) {
 		this.bps07y2 = bps07y2;
 	}
+
 
 
 	public int getBps07y3() {
@@ -326,9 +436,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps07y3(int bps07y3) {
 		this.bps07y3 = bps07y3;
 	}
+
 
 
 	public int getBps07y4() {
@@ -336,9 +448,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps07y4(int bps07y4) {
 		this.bps07y4 = bps07y4;
 	}
+
+
+
+	public int getBps07y_04() {
+		return bps07y_04;
+	}
+
+
+
+	public void setBps07y_04(int bps07y_04) {
+		this.bps07y_04 = bps07y_04;
+	}
+
+
+
+	public int getBps07y_06() {
+		return bps07y_06;
+	}
+
+
+
+	public void setBps07y_06(int bps07y_06) {
+		this.bps07y_06 = bps07y_06;
+	}
+
+
+
+	public int getBps07y_08() {
+		return bps07y_08;
+	}
+
+
+
+	public void setBps07y_08(int bps07y_08) {
+		this.bps07y_08 = bps07y_08;
+	}
+
 
 
 	public int getBps08y() {
@@ -346,9 +496,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps08y(int bps08y) {
 		this.bps08y = bps08y;
 	}
+
 
 
 	public int getBps08y2() {
@@ -356,9 +508,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps08y2(int bps08y2) {
 		this.bps08y2 = bps08y2;
 	}
+
 
 
 	public int getBps08y3() {
@@ -366,9 +520,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps08y3(int bps08y3) {
 		this.bps08y3 = bps08y3;
 	}
+
 
 
 	public int getBps08y4() {
@@ -376,9 +532,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps08y4(int bps08y4) {
 		this.bps08y4 = bps08y4;
 	}
+
+
+
+	public int getBps08y_04() {
+		return bps08y_04;
+	}
+
+
+
+	public void setBps08y_04(int bps08y_04) {
+		this.bps08y_04 = bps08y_04;
+	}
+
+
+
+	public int getBps08y_06() {
+		return bps08y_06;
+	}
+
+
+
+	public void setBps08y_06(int bps08y_06) {
+		this.bps08y_06 = bps08y_06;
+	}
+
+
+
+	public int getBps08y_08() {
+		return bps08y_08;
+	}
+
+
+
+	public void setBps08y_08(int bps08y_08) {
+		this.bps08y_08 = bps08y_08;
+	}
+
 
 
 	public int getBps09y() {
@@ -386,9 +580,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps09y(int bps09y) {
 		this.bps09y = bps09y;
 	}
+
 
 
 	public int getBps09y2() {
@@ -396,9 +592,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps09y2(int bps09y2) {
 		this.bps09y2 = bps09y2;
 	}
+
 
 
 	public int getBps09y3() {
@@ -406,9 +604,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps09y3(int bps09y3) {
 		this.bps09y3 = bps09y3;
 	}
+
 
 
 	public int getBps09y4() {
@@ -416,9 +616,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps09y4(int bps09y4) {
 		this.bps09y4 = bps09y4;
 	}
+
+
+
+	public int getBps09y_04() {
+		return bps09y_04;
+	}
+
+
+
+	public void setBps09y_04(int bps09y_04) {
+		this.bps09y_04 = bps09y_04;
+	}
+
+
+
+	public int getBps09y_06() {
+		return bps09y_06;
+	}
+
+
+
+	public void setBps09y_06(int bps09y_06) {
+		this.bps09y_06 = bps09y_06;
+	}
+
+
+
+	public int getBps09y_08() {
+		return bps09y_08;
+	}
+
+
+
+	public void setBps09y_08(int bps09y_08) {
+		this.bps09y_08 = bps09y_08;
+	}
+
 
 
 	public int getBps10y() {
@@ -426,9 +664,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps10y(int bps10y) {
 		this.bps10y = bps10y;
 	}
+
 
 
 	public int getBps10y2() {
@@ -436,9 +676,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps10y2(int bps10y2) {
 		this.bps10y2 = bps10y2;
 	}
+
 
 
 	public int getBps10y3() {
@@ -446,9 +688,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps10y3(int bps10y3) {
 		this.bps10y3 = bps10y3;
 	}
+
 
 
 	public int getBps10y4() {
@@ -456,9 +700,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps10y4(int bps10y4) {
 		this.bps10y4 = bps10y4;
 	}
+
+
+
+	public int getBps10y_04() {
+		return bps10y_04;
+	}
+
+
+
+	public void setBps10y_04(int bps10y_04) {
+		this.bps10y_04 = bps10y_04;
+	}
+
+
+
+	public int getBps10y_06() {
+		return bps10y_06;
+	}
+
+
+
+	public void setBps10y_06(int bps10y_06) {
+		this.bps10y_06 = bps10y_06;
+	}
+
+
+
+	public int getBps10y_08() {
+		return bps10y_08;
+	}
+
+
+
+	public void setBps10y_08(int bps10y_08) {
+		this.bps10y_08 = bps10y_08;
+	}
+
 
 
 	public int getBps11y() {
@@ -466,9 +748,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps11y(int bps11y) {
 		this.bps11y = bps11y;
 	}
+
 
 
 	public int getBps11y2() {
@@ -476,9 +760,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps11y2(int bps11y2) {
 		this.bps11y2 = bps11y2;
 	}
+
 
 
 	public int getBps11y3() {
@@ -486,9 +772,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps11y3(int bps11y3) {
 		this.bps11y3 = bps11y3;
 	}
+
 
 
 	public int getBps11y4() {
@@ -496,9 +784,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps11y4(int bps11y4) {
 		this.bps11y4 = bps11y4;
 	}
+
+
+
+	public int getBps11y_04() {
+		return bps11y_04;
+	}
+
+
+
+	public void setBps11y_04(int bps11y_04) {
+		this.bps11y_04 = bps11y_04;
+	}
+
+
+
+	public int getBps11y_06() {
+		return bps11y_06;
+	}
+
+
+
+	public void setBps11y_06(int bps11y_06) {
+		this.bps11y_06 = bps11y_06;
+	}
+
+
+
+	public int getBps11y_08() {
+		return bps11y_08;
+	}
+
+
+
+	public void setBps11y_08(int bps11y_08) {
+		this.bps11y_08 = bps11y_08;
+	}
+
 
 
 	public int getBps12y() {
@@ -506,9 +832,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps12y(int bps12y) {
 		this.bps12y = bps12y;
 	}
+
 
 
 	public int getBps12y2() {
@@ -516,9 +844,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps12y2(int bps12y2) {
 		this.bps12y2 = bps12y2;
 	}
+
 
 
 	public int getBps12y3() {
@@ -526,9 +856,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps12y3(int bps12y3) {
 		this.bps12y3 = bps12y3;
 	}
+
 
 
 	public int getBps12y4() {
@@ -536,9 +868,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps12y4(int bps12y4) {
 		this.bps12y4 = bps12y4;
 	}
+
+
+
+	public int getBps12y_04() {
+		return bps12y_04;
+	}
+
+
+
+	public void setBps12y_04(int bps12y_04) {
+		this.bps12y_04 = bps12y_04;
+	}
+
+
+
+	public int getBps12y_06() {
+		return bps12y_06;
+	}
+
+
+
+	public void setBps12y_06(int bps12y_06) {
+		this.bps12y_06 = bps12y_06;
+	}
+
+
+
+	public int getBps12y_08() {
+		return bps12y_08;
+	}
+
+
+
+	public void setBps12y_08(int bps12y_08) {
+		this.bps12y_08 = bps12y_08;
+	}
+
 
 
 	public int getBps13y() {
@@ -546,9 +916,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps13y(int bps13y) {
 		this.bps13y = bps13y;
 	}
+
 
 
 	public int getBps13y2() {
@@ -556,9 +928,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps13y2(int bps13y2) {
 		this.bps13y2 = bps13y2;
 	}
+
 
 
 	public int getBps13y3() {
@@ -566,9 +940,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps13y3(int bps13y3) {
 		this.bps13y3 = bps13y3;
 	}
+
 
 
 	public int getBps13y4() {
@@ -576,9 +952,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps13y4(int bps13y4) {
 		this.bps13y4 = bps13y4;
 	}
+
+
+
+	public int getBps13y_04() {
+		return bps13y_04;
+	}
+
+
+
+	public void setBps13y_04(int bps13y_04) {
+		this.bps13y_04 = bps13y_04;
+	}
+
+
+
+	public int getBps13y_06() {
+		return bps13y_06;
+	}
+
+
+
+	public void setBps13y_06(int bps13y_06) {
+		this.bps13y_06 = bps13y_06;
+	}
+
+
+
+	public int getBps13y_08() {
+		return bps13y_08;
+	}
+
+
+
+	public void setBps13y_08(int bps13y_08) {
+		this.bps13y_08 = bps13y_08;
+	}
+
 
 
 	public int getBps14y() {
@@ -586,9 +1000,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps14y(int bps14y) {
 		this.bps14y = bps14y;
 	}
+
 
 
 	public int getBps14y2() {
@@ -596,9 +1012,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps14y2(int bps14y2) {
 		this.bps14y2 = bps14y2;
 	}
+
 
 
 	public int getBps14y3() {
@@ -606,9 +1024,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps14y3(int bps14y3) {
 		this.bps14y3 = bps14y3;
 	}
+
 
 
 	public int getBps14y4() {
@@ -616,9 +1036,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps14y4(int bps14y4) {
 		this.bps14y4 = bps14y4;
 	}
+
+
+
+	public int getBps14y_04() {
+		return bps14y_04;
+	}
+
+
+
+	public void setBps14y_04(int bps14y_04) {
+		this.bps14y_04 = bps14y_04;
+	}
+
+
+
+	public int getBps14y_06() {
+		return bps14y_06;
+	}
+
+
+
+	public void setBps14y_06(int bps14y_06) {
+		this.bps14y_06 = bps14y_06;
+	}
+
+
+
+	public int getBps14y_08() {
+		return bps14y_08;
+	}
+
+
+
+	public void setBps14y_08(int bps14y_08) {
+		this.bps14y_08 = bps14y_08;
+	}
+
 
 
 	public int getBps15y() {
@@ -626,9 +1084,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps15y(int bps15y) {
 		this.bps15y = bps15y;
 	}
+
 
 
 	public int getBps15y2() {
@@ -636,9 +1096,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps15y2(int bps15y2) {
 		this.bps15y2 = bps15y2;
 	}
+
 
 
 	public int getBps15y3() {
@@ -646,9 +1108,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps15y3(int bps15y3) {
 		this.bps15y3 = bps15y3;
 	}
+
 
 
 	public int getBps15y4() {
@@ -656,9 +1120,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps15y4(int bps15y4) {
 		this.bps15y4 = bps15y4;
 	}
+
+
+
+	public int getBps15y_04() {
+		return bps15y_04;
+	}
+
+
+
+	public void setBps15y_04(int bps15y_04) {
+		this.bps15y_04 = bps15y_04;
+	}
+
+
+
+	public int getBps15y_06() {
+		return bps15y_06;
+	}
+
+
+
+	public void setBps15y_06(int bps15y_06) {
+		this.bps15y_06 = bps15y_06;
+	}
+
+
+
+	public int getBps15y_08() {
+		return bps15y_08;
+	}
+
+
+
+	public void setBps15y_08(int bps15y_08) {
+		this.bps15y_08 = bps15y_08;
+	}
+
 
 
 	public int getBps16y() {
@@ -666,9 +1168,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps16y(int bps16y) {
 		this.bps16y = bps16y;
 	}
+
 
 
 	public int getBps16y2() {
@@ -676,9 +1180,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps16y2(int bps16y2) {
 		this.bps16y2 = bps16y2;
 	}
+
 
 
 	public int getBps16y3() {
@@ -686,9 +1192,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps16y3(int bps16y3) {
 		this.bps16y3 = bps16y3;
 	}
+
 
 
 	public int getBps16y4() {
@@ -696,9 +1204,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps16y4(int bps16y4) {
 		this.bps16y4 = bps16y4;
 	}
+
+
+
+	public int getBps16y_04() {
+		return bps16y_04;
+	}
+
+
+
+	public void setBps16y_04(int bps16y_04) {
+		this.bps16y_04 = bps16y_04;
+	}
+
+
+
+	public int getBps16y_06() {
+		return bps16y_06;
+	}
+
+
+
+	public void setBps16y_06(int bps16y_06) {
+		this.bps16y_06 = bps16y_06;
+	}
+
+
+
+	public int getBps16y_08() {
+		return bps16y_08;
+	}
+
+
+
+	public void setBps16y_08(int bps16y_08) {
+		this.bps16y_08 = bps16y_08;
+	}
+
 
 
 	public int getBps17y() {
@@ -706,9 +1252,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps17y(int bps17y) {
 		this.bps17y = bps17y;
 	}
+
 
 
 	public int getBps17y2() {
@@ -716,9 +1264,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps17y2(int bps17y2) {
 		this.bps17y2 = bps17y2;
 	}
+
 
 
 	public int getBps17y3() {
@@ -726,9 +1276,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps17y3(int bps17y3) {
 		this.bps17y3 = bps17y3;
 	}
+
 
 
 	public int getBps17y4() {
@@ -736,9 +1288,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps17y4(int bps17y4) {
 		this.bps17y4 = bps17y4;
 	}
+
+
+
+	public int getBps17y_04() {
+		return bps17y_04;
+	}
+
+
+
+	public void setBps17y_04(int bps17y_04) {
+		this.bps17y_04 = bps17y_04;
+	}
+
+
+
+	public int getBps17y_06() {
+		return bps17y_06;
+	}
+
+
+
+	public void setBps17y_06(int bps17y_06) {
+		this.bps17y_06 = bps17y_06;
+	}
+
+
+
+	public int getBps17y_08() {
+		return bps17y_08;
+	}
+
+
+
+	public void setBps17y_08(int bps17y_08) {
+		this.bps17y_08 = bps17y_08;
+	}
+
 
 
 	public int getBps18y() {
@@ -746,9 +1336,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps18y(int bps18y) {
 		this.bps18y = bps18y;
 	}
+
 
 
 	public int getBps18y2() {
@@ -756,9 +1348,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps18y2(int bps18y2) {
 		this.bps18y2 = bps18y2;
 	}
+
 
 
 	public int getBps18y3() {
@@ -766,9 +1360,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps18y3(int bps18y3) {
 		this.bps18y3 = bps18y3;
 	}
+
 
 
 	public int getBps18y4() {
@@ -776,9 +1372,47 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps18y4(int bps18y4) {
 		this.bps18y4 = bps18y4;
 	}
+
+
+
+	public int getBps18y_04() {
+		return bps18y_04;
+	}
+
+
+
+	public void setBps18y_04(int bps18y_04) {
+		this.bps18y_04 = bps18y_04;
+	}
+
+
+
+	public int getBps18y_06() {
+		return bps18y_06;
+	}
+
+
+
+	public void setBps18y_06(int bps18y_06) {
+		this.bps18y_06 = bps18y_06;
+	}
+
+
+
+	public int getBps18y_08() {
+		return bps18y_08;
+	}
+
+
+
+	public void setBps18y_08(int bps18y_08) {
+		this.bps18y_08 = bps18y_08;
+	}
+
 
 
 	public int getBps19y() {
@@ -786,9 +1420,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps19y(int bps19y) {
 		this.bps19y = bps19y;
 	}
+
 
 
 	public int getBps19y2() {
@@ -796,9 +1432,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps19y2(int bps19y2) {
 		this.bps19y2 = bps19y2;
 	}
+
 
 
 	public int getBps19y3() {
@@ -806,9 +1444,11 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps19y3(int bps19y3) {
 		this.bps19y3 = bps19y3;
 	}
+
 
 
 	public int getBps19y4() {
@@ -816,270 +1456,132 @@ public class BpsDTO {
 	}
 
 
+
 	public void setBps19y4(int bps19y4) {
 		this.bps19y4 = bps19y4;
 	}
 
 
-	public int getPbr_07y() {
-		return pbr_07y;
+
+	public int getBps19y_04() {
+		return bps19y_04;
 	}
 
 
-	public void setPbr_07y(int pbr_07y) {
-		this.pbr_07y = pbr_07y;
+
+	public void setBps19y_04(int bps19y_04) {
+		this.bps19y_04 = bps19y_04;
 	}
 
 
-	public int getPbr_08y() {
-		return pbr_08y;
+
+	public int getBps19y_06() {
+		return bps19y_06;
 	}
 
 
-	public void setPbr_08y(int pbr_08y) {
-		this.pbr_08y = pbr_08y;
+
+	public void setBps19y_06(int bps19y_06) {
+		this.bps19y_06 = bps19y_06;
 	}
 
 
-	public int getPbr_09y() {
-		return pbr_09y;
+
+	public int getBps19y_08() {
+		return bps19y_08;
 	}
 
 
-	public void setPbr_09y(int pbr_09y) {
-		this.pbr_09y = pbr_09y;
+
+	public void setBps19y_08(int bps19y_08) {
+		this.bps19y_08 = bps19y_08;
 	}
 
 
-	public int getPbr_10y() {
-		return pbr_10y;
+
+	public int getBps20y() {
+		return bps20y;
 	}
 
 
-	public void setPbr_10y(int pbr_10y) {
-		this.pbr_10y = pbr_10y;
+
+	public void setBps20y(int bps20y) {
+		this.bps20y = bps20y;
 	}
 
 
-	public int getPbr_11y() {
-		return pbr_11y;
+
+	public int getBps20y2() {
+		return bps20y2;
 	}
 
 
-	public void setPbr_11y(int pbr_11y) {
-		this.pbr_11y = pbr_11y;
+
+	public void setBps20y2(int bps20y2) {
+		this.bps20y2 = bps20y2;
 	}
 
 
-	public int getPbr_12y() {
-		return pbr_12y;
+
+	public int getBps20y3() {
+		return bps20y3;
 	}
 
 
-	public void setPbr_12y(int pbr_12y) {
-		this.pbr_12y = pbr_12y;
+
+	public void setBps20y3(int bps20y3) {
+		this.bps20y3 = bps20y3;
 	}
 
 
-	public int getPbr_13y() {
-		return pbr_13y;
+
+	public int getBps20y4() {
+		return bps20y4;
 	}
 
 
-	public void setPbr_13y(int pbr_13y) {
-		this.pbr_13y = pbr_13y;
+
+	public void setBps20y4(int bps20y4) {
+		this.bps20y4 = bps20y4;
 	}
 
 
-	public int getPbr_14y() {
-		return pbr_14y;
+
+	public int getBps20y_04() {
+		return bps20y_04;
 	}
 
 
-	public void setPbr_14y(int pbr_14y) {
-		this.pbr_14y = pbr_14y;
+
+	public void setBps20y_04(int bps20y_04) {
+		this.bps20y_04 = bps20y_04;
 	}
 
 
-	public int getPbr_15y() {
-		return pbr_15y;
+
+	public int getBps20y_06() {
+		return bps20y_06;
 	}
 
 
-	public void setPbr_15y(int pbr_15y) {
-		this.pbr_15y = pbr_15y;
+
+	public void setBps20y_06(int bps20y_06) {
+		this.bps20y_06 = bps20y_06;
 	}
 
 
-	public int getPbr_16y() {
-		return pbr_16y;
+
+	public int getBps20y_08() {
+		return bps20y_08;
 	}
 
 
-	public void setPbr_16y(int pbr_16y) {
-		this.pbr_16y = pbr_16y;
+
+	public void setBps20y_08(int bps20y_08) {
+		this.bps20y_08 = bps20y_08;
 	}
 
-
-	public int getPbr_17y() {
-		return pbr_17y;
-	}
-
-
-	public void setPbr_17y(int pbr_17y) {
-		this.pbr_17y = pbr_17y;
-	}
-
-
-	public int getPbr_18y() {
-		return pbr_18y;
-	}
-
-
-	public void setPbr_18y(int pbr_18y) {
-		this.pbr_18y = pbr_18y;
-	}
-
-
-	public int getPbr_19y() {
-		return pbr_19y;
-	}
-
-
-	public void setPbr_19y(int pbr_19y) {
-		this.pbr_19y = pbr_19y;
-	}
-
-
-	public int getPer_07y() {
-		return per_07y;
-	}
-
-
-	public void setPer_07y(int per_07y) {
-		this.per_07y = per_07y;
-	}
-
-
-	public int getPer_08y() {
-		return per_08y;
-	}
-
-
-	public void setPer_08y(int per_08y) {
-		this.per_08y = per_08y;
-	}
-
-
-	public int getPer_09y() {
-		return per_09y;
-	}
-
-
-	public void setPer_09y(int per_09y) {
-		this.per_09y = per_09y;
-	}
-
-
-	public int getPer_10y() {
-		return per_10y;
-	}
-
-
-	public void setPer_10y(int per_10y) {
-		this.per_10y = per_10y;
-	}
-
-
-	public int getPer_11y() {
-		return per_11y;
-	}
-
-
-	public void setPer_11y(int per_11y) {
-		this.per_11y = per_11y;
-	}
-
-
-	public int getPer_12y() {
-		return per_12y;
-	}
-
-
-	public void setPer_12y(int per_12y) {
-		this.per_12y = per_12y;
-	}
-
-
-	public int getPer_13y() {
-		return per_13y;
-	}
-
-
-	public void setPer_13y(int per_13y) {
-		this.per_13y = per_13y;
-	}
-
-
-	public int getPer_14y() {
-		return per_14y;
-	}
-
-
-	public void setPer_14y(int per_14y) {
-		this.per_14y = per_14y;
-	}
-
-
-	public int getPer_15y() {
-		return per_15y;
-	}
-
-
-	public void setPer_15y(int per_15y) {
-		this.per_15y = per_15y;
-	}
-
-
-	public int getPer_16y() {
-		return per_16y;
-	}
-
-
-	public void setPer_16y(int per_16y) {
-		this.per_16y = per_16y;
-	}
-
-
-	public int getPer_17y() {
-		return per_17y;
-	}
-
-
-	public void setPer_17y(int per_17y) {
-		this.per_17y = per_17y;
-	}
-
-
-	public int getPer_18y() {
-		return per_18y;
-	}
-
-
-	public void setPer_18y(int per_18y) {
-		this.per_18y = per_18y;
-	}
-
-
-	public int getPer_19y() {
-		return per_19y;
-	}
-
-
-	public void setPer_19y(int per_19y) {
-		this.per_19y = per_19y;
-	}
-
+	
 	
 	
 }

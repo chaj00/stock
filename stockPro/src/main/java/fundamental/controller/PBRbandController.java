@@ -22,20 +22,23 @@ public class PBRbandController extends HttpServlet{
 	FundamentalService service;
 	
 	@RequestMapping(value = "/pbrband.do", method = RequestMethod.GET)
-	public ModelAndView list(){
+	public ModelAndView list(String code){
 		ModelAndView mav = new ModelAndView();
-//		int codelistsize = codelist.size();
-			
 		List<EnterpriseTotalDTO> codeList 		   = service.codeList();
-		EnterpriseFinanceDTO 	 enterpriseFinance = service.enterpriseFinance(codeList.get(1).getCode());
-		BpsDTO 					 bps 		       = service.bps(enterpriseFinance, codeList.get(1).getTotalstock(), codeList.get(1).getCode());
-		List<StockCloseWDTO> 	 stockCloseList    = service.stockCloseList(codeList.get(1).getCode());
-		List<StockCloseWDTO>	 closeList		   = service.closeList(codeList.get(1).getCode());
+		//ÁÖ½ÄÃÑ¼ö
+		int totalStock =0;
+		for(int i=0 ; i<codeList.size();i++){
+			if(codeList.get(i).getCode().equals(code)){
+				totalStock = codeList.get(i).getTotalstock();
+//				System.out.println("controller - code :"+code+", name : "+codeList.get(i).getName());
+				
+			}
+		}
+		EnterpriseFinanceDTO 	 enterpriseFinance = service.enterpriseFinance(code);
+		List<StockCloseWDTO> 	 stockCloseList    = service.stockCloseList(code);
+		List<StockCloseWDTO>	 closeList		   = service.closeList(code);
+		BpsDTO 					 bps 		       = service.bps(enterpriseFinance, totalStock, code);
 		
-		System.out.println("close : "+closeList.get(0).getPrice());
-		System.out.println("bps : "+bps.getBps06y());
-		System.out.println("codeList.get(0).getName() : "+codeList.get(0).getName());
-		System.out.println("CONTROLLER!!!!!! : "+stockCloseList);
 		
 		mav.addObject("closeList", closeList);
 		mav.addObject("codeList", codeList);
@@ -44,7 +47,9 @@ public class PBRbandController extends HttpServlet{
 		mav.addObject("stockCloseList",stockCloseList);
 		mav.setViewName("chart_pbr");
 		return mav;
+		
 	}
 }
+
 
 
